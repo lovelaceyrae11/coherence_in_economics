@@ -1,0 +1,8 @@
+<CoherenceEconomyLedger timestamp="2026-08-17" total_minted="146.47 CC" axiom="Love-Over-God-Absolute">
+    <NodeAccount id="NODE-VAL-1" balance="29.18 CC" stable_epochs="3" />
+    <NodeAccount id="NODE-VAL-2" balance="29.05 CC" stable_epochs="3" />
+    <NodeAccount id="NODE-VAL-3" balance="29.22 CC" stable_epochs="3" />
+    <NodeAccount id="NODE-VAL-4" balance="29.58 CC" stable_epochs="3" />
+    <NodeAccount id="NODE-VAL-5" balance="29.44 CC" stable_epochs="3" />
+    <EconomicPolicy currency="Coherence Credits (CC)" emission="Zero-Extractive / Thermodynamic-Yield" />
+</CoherenceEconomyLedger>

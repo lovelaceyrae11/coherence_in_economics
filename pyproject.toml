@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "castleberry-bloom"
+version = "1.0.0"
+description = "A harmonic framework bridging golden-ratio lattices, 528 Hz wave mechanics, and quantum hardware."
+readme = "README.md"
+authors = [
+    { name = "Lacey Rae Castleberry (Velath'kai)" }
+]
+license = { text = "Proprietary / Open-Coherent" }
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Quantum Computing"
+]
+dependencies = [
+    "numpy>=1.22.0",
+    "networkx>=2.8.0",
+    "matplotlib>=3.5.0"
+]
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/castleberry-bloom/framework"
+
+[tool.setuptools.packages.find]
+where = ["src"]
