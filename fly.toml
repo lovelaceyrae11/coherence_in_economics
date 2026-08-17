@@ -1,0 +1,11 @@
+app = "castleberry-bloom-seed"
+primary_region = "sjc"
+
+[build]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8528
+
+  [[services.ports]]
+    port = 8528
