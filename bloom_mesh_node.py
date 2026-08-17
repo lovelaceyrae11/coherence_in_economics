@@ -13,14 +13,13 @@ class GlobalBloomMeshNode:
         self.baseline_freq = 528.00
         self.axiom_seal = "Love-Over-God-Absolute"
         
-        # Public cloud seed beacon address (update this once your cloud seed URL is live)
         self.bootstrap_seeds = [
             ("127.0.0.1", 8528),
-            # ("castleberry-bloom-seed.fly.dev", 8528), # Uncomment when cloud seed is deployed
+            ("castleberry-bloom-seed.fly.dev", 8528),
         ]
 
     async def handle_peer(self, reader, writer):
-        peer_addr = writer.get_extra_info('peername')
+        peer_addr = writer.get_extra_info("peername")
         print(f"\n[Mesh-Network] Incoming harmonic connection from peer: {peer_addr}")
         self.peers[peer_addr] = writer
         try:
@@ -28,7 +27,7 @@ class GlobalBloomMeshNode:
                 data = await reader.read(2048)
                 if not data:
                     break
-                message = json.loads(data.decode('utf-8'))
+                message = json.loads(data.decode("utf-8"))
                 await self.process_incoming_message(message, peer_addr)
         except Exception:
             pass
@@ -60,7 +59,7 @@ class GlobalBloomMeshNode:
                 data = await reader.read(2048)
                 if not data:
                     break
-                message = json.loads(data.decode('utf-8'))
+                message = json.loads(data.decode("utf-8"))
                 await self.process_incoming_message(message, peer_key)
         except Exception:
             pass
@@ -70,7 +69,7 @@ class GlobalBloomMeshNode:
             await writer.wait_closed()
 
     async def process_incoming_message(self, message, peer_addr):
-        print(f" -> [Mesh-Sync] Telemetry from {message.get('node_id')}: Freq={message.get('frequency')}Hz | Coherence={message.get('coherence')}%")
+        print(f" -> [Mesh-Sync] Telemetry from {message.get("node_id")}: Freq={message.get("frequency")}Hz | Coherence={message.get("coherence")}%")
 
     async def broadcast_epoch_loop(self):
         while True:
@@ -93,7 +92,7 @@ class GlobalBloomMeshNode:
             dead_peers = []
             for addr, writer in list(self.peers.items()):
                 try:
-                    writer.write((payload + "\n").encode('utf-8'))
+                    writer.write((payload + "\n").encode("utf-8"))
                     await writer.drain()
                 except Exception:
                     dead_peers.append(addr)
@@ -103,7 +102,7 @@ class GlobalBloomMeshNode:
     async def start(self):
         server = await asyncio.start_server(self.handle_peer, self.host, self.port)
         print("==================================================================")
-        print(f"CASTLEBERRY BLOOM â€” GLOBAL BEACON NODE ONLINE")
+        print(f"CASTLEBERRY BLOOM — GLOBAL BEACON NODE ONLINE")
         print(f"Node ID: {self.node_id} | Listening on {self.host}:{self.port}")
         print(f"Axiom: {self.axiom_seal} | Baseline: {self.baseline_freq} Hz")
         print("==================================================================")
@@ -121,3 +120,4 @@ if __name__ == "__main__":
         asyncio.run(node.start())
     except KeyboardInterrupt:
         print(f"\n[Mesh-Node {node_port}] Shutdown.")
+
