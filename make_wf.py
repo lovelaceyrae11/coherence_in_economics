@@ -1,4 +1,7 @@
-name: Fly Deploy
+﻿import os
+os.makedirs(".github/workflows", exist_ok=True)
+with open(".github/workflows/fly.yml", "w", encoding="utf-8") as f:
+    f.write("""name: Fly Deploy
 
 on:
   push:
@@ -21,3 +24,5 @@ jobs:
           ~/.fly/bin/flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+""")
+print("[Setup] Fly workflow file successfully generated!")
