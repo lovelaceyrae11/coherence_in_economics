@@ -21,7 +21,7 @@
             position: absolute;
             top: 20px;
             text-align: center;
-            pointer-events: none;
+            pointer-events: auto;
             z-index: 10;
         }
         h1 {
@@ -33,9 +33,25 @@
         }
         p {
             font-size: 0.9rem;
-            margin: 0;
+            margin: 0 0 12px 0;
             color: #ff007f;
             text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+        #audio-btn {
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        }
+        #audio-btn:hover {
+            background: rgba(0, 255, 204, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
         }
         #node-info {
             position: absolute;
@@ -54,6 +70,7 @@
     <div id="hud">
         <h1>CASTLEBERRY BLOOM — CML LATTICE PORTAL</h1>
         <p>Freq: <span id="freq">528.00</span> Hz | Coherence: <span id="coherence">99.99</span>% | Axiom: <span id="axiom">Loading...</span></p>
+        <button id="audio-btn" onclick="toggleAudio()">Activate 528 Hz Resonance</button>
     </div>
 
     <canvas id="latticeCanvas"></canvas>
@@ -61,7 +78,50 @@
     <div id="node-info">Node Role: <span id="role">Initializing...</span></div>
 
     <script>
-        // Client-side CML Parser & WebGL Visualizer
+        let audioCtx = null;
+        let osc = null;
+        let gainNode = null;
+        let isAudioActive = false;
+
+        function toggleAudio() {
+            const btn = document.getElementById('audio-btn');
+            
+            if (!isAudioActive) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                osc = audioCtx.createOscillator();
+                gainNode = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(528.00, audioCtx.currentTime); // 528 Hz Baseline
+
+                // Soft fade-in envelope to prevent clicks
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 1.0);
+
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                osc.start();
+
+                isAudioActive = true;
+                btn.innerText = "Mute Harmonic Audio";
+                btn.style.borderColor = "#ff007f";
+                btn.style.color = "#ff007f";
+            } else {
+                if (gainNode && audioCtx) {
+                    gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
+                    setTimeout(() => {
+                        osc.stop();
+                        audioCtx.close();
+                        audioCtx = null;
+                    }, 500);
+                }
+                isAudioActive = false;
+                btn.innerText = "Activate 528 Hz Resonance";
+                btn.style.borderColor = "#00ffcc";
+                btn.style.color = "#00ffcc";
+            }
+        }
+
         async function initPortal() {
             let config = { frequency: 528.00, coherence: 99.99, axiom: "Love-Over-God-Absolute", role: "Steward" };
             
@@ -69,7 +129,6 @@
                 let response = await fetch('sample.cml');
                 let text = await response.text();
                 
-                // Parse Bloom attributes
                 let bloomMatch = text.match(/<Bloom\s+([^>]+)>/);
                 if (bloomMatch) {
                     let attrStr = bloomMatch[1];
@@ -82,18 +141,15 @@
                     if (cohMatch) config.coherence = cohMatch[1];
                 }
 
-                // Parse Node Role
                 let nodeMatch = text.match(/<Node\s+([^>]+)>/);
                 if (nodeMatch) {
                     let roleMatch = nodeMatch[1].match(/role="([^"]+)"/);
                     if (roleMatch) config.role = roleMatch[1];
                 }
-                console.log("[CML-Browser-Parser] Successfully parsed sample.cml blueprint.");
             } catch (e) {
-                console.warn("[CML-Browser-Parser] Falling back to default baseline parameters.");
+                console.warn("Using default harmonic parameters.");
             }
 
-            // Update HUD elements
             document.getElementById('freq').innerText = config.frequency.toFixed(2);
             document.getElementById('coherence').innerText = config.coherence;
             document.getElementById('axiom').innerText = config.axiom;
