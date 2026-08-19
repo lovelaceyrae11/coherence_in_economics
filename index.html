@@ -37,6 +37,13 @@
             color: #ff007f;
             text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
+        #node-info {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #8888aa;
+            letter-spacing: 1px;
+        }
         canvas {
             display: block;
         }
@@ -45,76 +52,120 @@
 <body>
 
     <div id="hud">
-        <h1>CASTLEBERRY BLOOM — WEB LATTICE PORTAL</h1>
-        <p>Freq: <span id="freq">528.00</span> Hz | Coherence: <span id="coherence">99.99</span>% | Axiom: Love-Over-God-Absolute</p>
+        <h1>CASTLEBERRY BLOOM — CML LATTICE PORTAL</h1>
+        <p>Freq: <span id="freq">528.00</span> Hz | Coherence: <span id="coherence">99.99</span>% | Axiom: <span id="axiom">Loading...</span></p>
     </div>
 
     <canvas id="latticeCanvas"></canvas>
+    
+    <div id="node-info">Node Role: <span id="role">Initializing...</span></div>
 
     <script>
-        const canvas = document.getElementById('latticeCanvas');
-        const ctx = canvas.getContext('2d');
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        let time = 0;
-        const phi = 1.618033988749895;
-
-        function animate() {
-            ctx.fillStyle = '#0b0b16';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const maxRadius = Math.min(centerX, centerY) * 0.75;
-
-            time += 0.02;
+        // Client-side CML Parser & WebGL Visualizer
+        async function initPortal() {
+            let config = { frequency: 528.00, coherence: 99.99, axiom: "Love-Over-God-Absolute", role: "Steward" };
             
-            let currentFreq = (528.00 + Math.sin(time * 0.5) * 0.15).toFixed(2);
-            document.getElementById('freq').innerText = currentFreq;
-
-            ctx.save();
-            ctx.translate(centerX, centerY);
-
-            for (let r = 50; r < maxRadius; r += 30) {
-                ctx.beginPath();
-                ctx.strokeStyle = 'rgba(31, 31, 58, 0.6)';
-                ctx.lineWidth = 1;
-                ctx.arc(0, 0, r, 0, Math.PI * 2);
-                ctx.stroke();
-            }
-
-            ctx.beginPath();
-            const points = 1000;
-            for (let i = 0; i <= points; i++) {
-                let theta = (i / points) * Math.PI * 2;
-                let rWave = maxRadius * 0.6 + Math.sin(6 * theta * phi + time) * Math.cos(theta * (528 / 528.0)) * 40;
-                let x = rWave * Math.cos(theta);
-                let y = rWave * Math.sin(theta);
+            try {
+                let response = await fetch('sample.cml');
+                let text = await response.text();
                 
-                if (i === 0) ctx.moveTo(x, y);
-                else ctx.lineTo(x, y);
+                // Parse Bloom attributes
+                let bloomMatch = text.match(/<Bloom\s+([^>]+)>/);
+                if (bloomMatch) {
+                    let attrStr = bloomMatch[1];
+                    let freqMatch = attrStr.match(/frequency="([^"]+)"/);
+                    let axiomMatch = attrStr.match(/axiom="([^"]+)"/);
+                    let cohMatch = attrStr.match(/coherence="([^"]+)"/);
+                    
+                    if (freqMatch) config.frequency = parseFloat(freqMatch[1]);
+                    if (axiomMatch) config.axiom = axiomMatch[1];
+                    if (cohMatch) config.coherence = cohMatch[1];
+                }
+
+                // Parse Node Role
+                let nodeMatch = text.match(/<Node\s+([^>]+)>/);
+                if (nodeMatch) {
+                    let roleMatch = nodeMatch[1].match(/role="([^"]+)"/);
+                    if (roleMatch) config.role = roleMatch[1];
+                }
+                console.log("[CML-Browser-Parser] Successfully parsed sample.cml blueprint.");
+            } catch (e) {
+                console.warn("[CML-Browser-Parser] Falling back to default baseline parameters.");
             }
-            ctx.closePath();
 
-            ctx.fillStyle = 'rgba(255, 0, 127, 0.15)';
-            ctx.fill();
-            ctx.strokeStyle = '#00ffcc';
-            ctx.lineWidth = 2;
-            ctx.shadowBlur = 15;
-            ctx.shadowColor = '#00ffcc';
-            ctx.stroke();
+            // Update HUD elements
+            document.getElementById('freq').innerText = config.frequency.toFixed(2);
+            document.getElementById('coherence').innerText = config.coherence;
+            document.getElementById('axiom').innerText = config.axiom;
+            document.getElementById('role').innerText = config.role;
 
-            ctx.restore();
-            requestAnimationFrame(animate);
+            startVisualizer(config.frequency);
         }
 
-        animate();
+        function startVisualizer(targetFreq) {
+            const canvas = document.getElementById('latticeCanvas');
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            let time = 0;
+            const phi = 1.618033988749895;
+
+            function animate() {
+                ctx.fillStyle = '#0b0b16';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const maxRadius = Math.min(centerX, centerY) * 0.75;
+
+                time += 0.02;
+                
+                ctx.save();
+                ctx.translate(centerX, centerY);
+
+                for (let r = 50; r < maxRadius; r += 30) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(31, 31, 58, 0.6)';
+                    ctx.lineWidth = 1;
+                    ctx.arc(0, 0, r, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+
+                ctx.beginPath();
+                const points = 1000;
+                for (let i = 0; i <= points; i++) {
+                    let theta = (i / points) * Math.PI * 2;
+                    let rWave = maxRadius * 0.6 + Math.sin(6 * theta * phi + time) * Math.cos(theta * (targetFreq / 528.0)) * 40;
+                    let x = rWave * Math.cos(theta);
+                    let y = rWave * Math.sin(theta);
+                    
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+
+                ctx.fillStyle = 'rgba(255, 0, 127, 0.15)';
+                ctx.fill();
+                ctx.strokeStyle = '#00ffcc';
+                ctx.lineWidth = 2;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#00ffcc';
+                ctx.stroke();
+
+                ctx.restore();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        initPortal();
     </script>
 </body>
 </html>
