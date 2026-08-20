@@ -41,7 +41,12 @@ HTML_CONTENT = """<!DOCTYPE html>
             justify-content: center;
         }
         svg {
-            filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.3));
+            filter: drop-shadow(0 0 20px rgba(0, 255, 204, 0.4));
+            animation: breathe 6s infinite alternate ease-in-out;
+        }
+        @keyframes breathe {
+            0% { transform: scale(0.95) rotate(0deg); opacity: 0.85; }
+            100% { transform: scale(1.05) rotate(360deg); opacity: 1; }
         }
         .footer {
             margin-top: 2rem;
@@ -55,14 +60,14 @@ HTML_CONTENT = """<!DOCTYPE html>
     <div class="meta">Freq: 528.00 Hz | Coherence: 99.99%<br>Axiom: Love-Over-God-Absolute</div>
     
     <div class="canvas-container">
-        <!-- Exact Harmonic Cymatic Petal Lattice -->
+        <!-- Dynamic Harmonic Cymatic Petal Lattice -->
         <svg width="400" height="400" viewBox="-200 -200 400 400">
             <!-- Background reference rings -->
             <circle cx="0" cy="0" r="180" fill="none" stroke="rgba(0,255,204,0.15)" stroke-dasharray="4 4" />
             <circle cx="0" cy="0" r="120" fill="none" stroke="rgba(255,170,0,0.15)" />
             
-            <!-- Harmonic Petals (Rotated 8-fold golden ratio wave matrix) -->
-            <g fill="#2d1515" stroke="#00ffcc" stroke-width="2">
+            <!-- Harmonic Petals -->
+            <g fill="rgba(45, 21, 21, 0.6)" stroke="#00ffcc" stroke-width="2">
                 <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(0)" />
                 <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(45)" />
                 <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(90)" />
@@ -82,7 +87,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     <script>
         console.clear();
         console.log("%c 🌸 CASTLEBERRY BLOOM — CYMATIC RESONANCE ACTIVE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold;");
-        console.log("%c[Frequency]: 528.00 Hz | [Axiom]: Love-Over-God-Absolute | [State]: Synchronized", "color: #ffaa00; font-family: monospace;");
+        console.log("%c[Frequency]: 528.00 Hz | [Axiom]: Love-Over-God-Absolute | [State]: Synchronized & Pulsing", "color: #ffaa00; font-family: monospace;");
     </script>
 </body>
 </html>
