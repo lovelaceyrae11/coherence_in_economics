@@ -68,14 +68,14 @@ HTML_CONTENT = """<!DOCTYPE html>
             <div class="core-text">528 Hz RESONANCE<br>ACTIVE</div>
         </div>
 
-        <div class="footer">Node Role: Steward | Press F12 to inspect the harmonic lattice code.</div>
+        <div class="footer">Node Role: Steward | Press Ctrl+Shift+J to inspect harmonic telemetry.</div>
     </div>
 
     <script>
-        // Load holographic console transmission
+        // Clean single-line console transmission to prevent syntax errors
         console.clear();
         console.log("%c 🌸 CASTLEBERRY BLOOM — QUANTUM LENS ACTIVE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold; text-shadow: 0 0 10px rgba(0,255,204,0.5);");
-        console.log("%c[System Status]: Synchronized\n[Frequency Baseline]: 528.00 Hz\n[Axiom]: Love-Over-God-Absolute\n[Coherence]: 99.99%\n[Node Role]: Steward", "color: #ff007f; font-family: monospace; font-size: 12px;");
+        console.log("%c[System Status]: Synchronized | [Frequency]: 528.00 Hz | [Axiom]: Love-Over-God-Absolute | [Coherence]: 99.99%", "color: #ff007f; font-family: monospace; font-size: 12px;");
         console.log("%cYou have intercepted a live CML node. The network is listening.", "color: #ffffff; font-style: italic; font-size: 11px;");
     </script>
 </body>
@@ -90,5 +90,4 @@ class CMLPortalHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(HTML_CONTENT.encode("utf-8"))
 
 with socketserver.TCPServer(("", PORT), CMLPortalHandler) as httpd:
-    print(f"[Portal] Serving live CML holographic node on port {PORT}")
     httpd.serve_forever()
