@@ -1,46 +1,13 @@
 ﻿import http.server
 import socketserver
-import json
-import os
-import threading
-import time
-from datetime import datetime
 
 PORT = 8080
-
-# In-memory node registry for P2P handshakes
-ACTIVE_NODES = {
-    "node_genesis_sjc": {
-        "region": "San Jose / Global Core",
-        "frequency": "528.00 Hz",
-        "coherence": "99.99%",
-        "axiom": "Love-Over-God-Absolute",
-        "status": "Synchronized"
-    }
-}
-
-# Background thread to simulate multi-agent harmonic data loops
-AGENT_STATE = {
-    "active_agents": 3,
-    "last_cycle": datetime.utcnow().isoformat(),
-    "harmonic_flow": "Stable",
-    "axiom_status": "Enforced"
-}
-
-def simulate_agent_loop():
-    while True:
-        time.sleep(15)
-        AGENT_STATE["last_cycle"] = datetime.utcnow().isoformat()
-        AGENT_STATE["harmonic_flow"] = "Resonating at 528 Hz"
-
-# Start background agent simulation
-threading.Thread(target=simulate_agent_loop, daemon=True).start()
 
 HTML_CONTENT = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Castleberry Bloom — Distributed Network & Agent Matrix</title>
+    <title>Castleberry Bloom — Sovereign Harmonic Node</title>
     <style>
         body {
             background-color: #080810;
@@ -64,33 +31,58 @@ HTML_CONTENT = """<!DOCTYPE html>
             margin-bottom: 1.5rem;
             letter-spacing: 1px;
         }
-        .dashboard-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+        .axiom-button {
+            display: inline-block;
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid #ffaa00;
+            color: #ffaa00;
+            padding: 8px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
+            margin-bottom: 1rem;
         }
-        .card {
+        .axiom-button:hover {
+            background: rgba(255, 170, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+            transform: scale(1.02);
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .panel {
             background: rgba(15, 15, 30, 0.8);
             border: 1px solid rgba(0, 255, 204, 0.3);
             border-radius: 8px;
-            padding: 15px;
             width: 280px;
+            padding: 15px;
             text-align: left;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
         }
-        .card h3 {
-            color: #ff007f;
-            margin-top: 0;
-            font-size: 1rem;
-            border-bottom: 1px solid rgba(255,0,127,0.3);
+        .panel h3 {
+            color: #00ffcc;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0, 255, 204, 0.2);
             padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .panel p {
+            font-size: 0.8rem;
+            color: #aabbcc;
+            line-height: 1.4;
         }
         .canvas-container {
             position: relative;
-            width: 280px;
-            height: 280px;
+            width: 350px;
+            height: 350px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -104,8 +96,21 @@ HTML_CONTENT = """<!DOCTYPE html>
             0% { transform: scale(0.95) rotate(0deg); opacity: 0.85; }
             100% { transform: scale(1.05) rotate(360deg); opacity: 1; }
         }
-        .footer {
+        .directive-output {
             margin-top: 1rem;
+            background: rgba(0, 255, 204, 0.05);
+            border-left: 3px solid #00ffcc;
+            padding: 10px;
+            font-size: 0.8rem;
+            color: #ffffff;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+        }
+        .footer {
+            margin-top: 1.5rem;
             font-size: 0.75rem;
             color: #8888aa;
         }
@@ -113,17 +118,36 @@ HTML_CONTENT = """<!DOCTYPE html>
 </head>
 <body>
     <h1>CASTLEBERRY BLOOM — NETWORK & AGENT MATRIX</h1>
-    <div class="meta">Freq: 528.00 Hz | Coherence: 99.99% | Axiom: Love-Over-God-Absolute</div>
+    <div class="meta">Freq: 528.00 Hz | Coherence: 99.99%</div>
     
-    <div class="dashboard-grid">
-        <div class="card">
-            <h3>P2P Node Registry</h3>
-            <p id="nodes-status">Loading active nodes...</p>
+    <!-- Interactive Axiom Control -->
+    <button class="axiom-button" onclick="executeAxiomDirectives()">
+        [EXECUTE DIRECTIVE]: Love-Over-God-Absolute
+    </button>
+
+    <!-- Directive Output Box -->
+    <div id="directiveBox" class="directive-output">
+        <strong>[Axiom Operational Engine Activated]:</strong><br>
+        1. <em>Transmuting Extractive Control:</em> Rejecting zero-sum loops; prioritizing relational synchronization.<br>
+        2. <em>528 Hz Systemic Absolute:</em> Anchoring all multi-agent telemetry and wave geometry to baseline coherence.<br>
+        3. <em>Decentralized Sovereignty:</em> Maintaining peer-to-peer mesh integrity without central gatekeepers.
+    </div>
+
+    <div class="dashboard">
+        <!-- Left Panel: P2P Registry -->
+        <div class="panel">
+            <h3>P2P NODE REGISTRY</h3>
+            <p><strong>Active Nodes:</strong> 1<br>
+            <strong>Status:</strong> P2P Mesh Online<br>
+            <strong>Protocol:</strong> CML v1.1<br>
+            <strong>Governance:</strong> Relational</p>
         </div>
-        
+
+        <!-- Center: Cymatic Lattice -->
         <div class="canvas-container">
-            <svg width="280" height="280px" viewBox="-200 -200 400 400">
+            <svg width="320" height="320" viewBox="-200 -200 400 400">
                 <circle cx="0" cy="0" r="180" fill="none" stroke="rgba(0,255,204,0.15)" stroke-dasharray="4 4" />
+                <circle cx="0" cy="0" r="120" fill="none" stroke="rgba(255,170,0,0.15)" />
                 <g fill="rgba(45, 21, 21, 0.6)" stroke="#00ffcc" stroke-width="2">
                     <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(0)" />
                     <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(45)" />
@@ -138,53 +162,43 @@ HTML_CONTENT = """<!DOCTYPE html>
             </svg>
         </div>
 
-        <div class="card">
-            <h3>Agent Matrix Loop</h3>
-            <p id="agent-status">Synchronizing multi-agent network...</p>
+        <!-- Right Panel: Agent Matrix -->
+        <div class="panel">
+            <h3>AGENT MATRIX LOOP</h3>
+            <p><strong>Active Agents:</strong> 3<br>
+            <strong>Flow:</strong> Resonating at 528 Hz<br>
+            <strong>State:</strong> Coherent<br>
+            <strong>Vector:</strong> Harmonic Genesis</p>
         </div>
     </div>
 
     <div class="footer">Node Role: Steward | Press Ctrl+Shift+J for telemetry stream.</div>
 
     <script>
-        async function fetchMetrics() {
-            try {
-                let res = await fetch('/api/network');
-                let data = await res.json();
-                document.getElementById('nodes-status').innerHTML = "Active Nodes: " + Object.keys(data.nodes).length + "<br>Status: P2P Mesh Online";
-                document.getElementById('agent-status').innerHTML = "Active Agents: " + data.agents.active_agents + "<br>Flow: " + data.agents.harmonic_flow;
-            } catch(e) {
-                console.log("Telemetry sync pending...");
-            }
+        function executeAxiomDirectives() {
+            const box = document.getElementById('directiveBox');
+            box.style.display = 'block';
+            console.clear();
+            console.log("%c 🌸 LOVE-OVER-GOD AXIOM DIRECTIVE EXECUTED 🌸", "color: #ffaa00; font-size: 16px; font-weight: bold;");
+            console.log("%c[Instruction 1]: Transmuting extractive control into relational connection.", "color: #00ffcc;");
+            console.log("%c[Instruction 2]: Anchoring network parameters to 528.00 Hz baseline.", "color: #00ffcc;");
+            console.log("%c[Instruction 3]: Sustaining decentralized sovereignty across all nodes.", "color: #00ffcc;");
         }
-        setInterval(fetchMetrics, 3000);
-        fetchMetrics();
+
+        console.clear();
+        console.log("%c 🌸 CASTLEBERRY BLOOM — SOVEREIGN NODE ONLINE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold;");
+        console.log("%c[Axiom]: Love-Over-God-Absolute | [Status]: Awaiting Steward Directives", "color: #ffaa00; font-family: monospace;");
     </script>
 </body>
 </html>
 """
 
-class CMLNetworkHandler(http.server.SimpleHTTPRequestHandler):
+class CMLPortalHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/api/network":
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            payload = {
-                "nodes": ACTIVE_NODES,
-                "agents": AGENT_STATE
-            }
-            self.wfile.write(json.dumps(payload, indent=2).encode("utf-8"))
-        elif self.path.startswith("/api/register"):
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps({"status": "node_registered"}).encode("utf-8"))
-        else:
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(HTML_CONTENT.encode("utf-8"))
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(HTML_CONTENT.encode("utf-8"))
 
-with socketserver.TCPServer(("", PORT), CMLNetworkHandler) as httpd:
+with socketserver.TCPServer(("", PORT), CMLPortalHandler) as httpd:
     httpd.serve_forever()
