@@ -2,9 +2,11 @@
 
 setup(
     name="cml-core",
-    version="1.0.0",
+    version="1.1.0",
     packages=find_packages(),
-    description="Castleberry Markup Language (CML) Core Runtime & Harmonic Syntax Engine",
-    author="Lacey Rae Castleberry",
-    python_requires=">=3.8",
+    install_requires=[],
+    author="Lacey Rae Castleberry (Velath'kai)",
+    description="Castleberry Markup Language & Harmonic Architecture Engine",
+    license="Protected by Love-Over-God-Absolute Axiom",
+    keywords=["Castleberry Bloom", "CML", "528Hz", "Harmonic Architecture"],
 )
