@@ -1,6 +1,5 @@
 ﻿import http.server
 import socketserver
-import os
 
 PORT = 8080
 
@@ -8,75 +7,82 @@ HTML_CONTENT = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Castleberry Bloom — CML Lattice Portal</title>
+    <title>Castleberry Bloom — Live Cymatic Resonance</title>
     <style>
         body {
-            background-color: #05050a;
+            background-color: #080810;
             color: #00ffcc;
             font-family: 'Courier New', monospace;
             text-align: center;
-            padding-top: 10vh;
             margin: 0;
+            padding-top: 5vh;
             overflow: hidden;
         }
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+            color: #00ffcc;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+            margin-bottom: 5px;
         }
         .meta {
-            color: #ff007f;
-            font-size: 1rem;
+            color: #ffaa00;
+            font-size: 0.95rem;
             margin-bottom: 2rem;
             letter-spacing: 1px;
         }
-        .lattice-container {
+        .canvas-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             margin: 0 auto;
-            border: 2px dashed rgba(0, 255, 204, 0.3);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: pulse 4s infinite alternate ease-in-out;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.1);
         }
-        @keyframes pulse {
-            0% { transform: scale(1); border-color: rgba(0, 255, 204, 0.2); }
-            100% { transform: scale(1.05); border-color: rgba(255, 0, 127, 0.6); }
-        }
-        .core-text {
-            font-size: 1.1rem;
-            color: #ffffff;
-            font-weight: bold;
+        svg {
+            filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.3));
         }
         .footer {
-            margin-top: 3rem;
-            font-size: 0.85rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
             color: #8888aa;
         }
     </style>
 </head>
 <body>
-    <div cml-node="active" axiom="Love-Over-God-Absolute">
-        <h1>CASTLEBERRY BLOOM — CML LATTICE PORTAL</h1>
-        <div class="meta">Freq: 528.00 Hz | Coherence: 99.99% | Axiom: Love-Over-God-Absolute</div>
-        
-        <div class="lattice-container">
-            <div class="core-text">528 Hz RESONANCE<br>ACTIVE</div>
-        </div>
-
-        <div class="footer">Node Role: Steward | Press Ctrl+Shift+J to inspect harmonic telemetry.</div>
+    <h1>CASTLEBERRY BLOOM — LIVE CYMATIC RESONANCE</h1>
+    <div class="meta">Freq: 528.00 Hz | Coherence: 99.99%<br>Axiom: Love-Over-God-Absolute</div>
+    
+    <div class="canvas-container">
+        <!-- Exact Harmonic Cymatic Petal Lattice -->
+        <svg width="400" height="400" viewBox="-200 -200 400 400">
+            <!-- Background reference rings -->
+            <circle cx="0" cy="0" r="180" fill="none" stroke="rgba(0,255,204,0.15)" stroke-dasharray="4 4" />
+            <circle cx="0" cy="0" r="120" fill="none" stroke="rgba(255,170,0,0.15)" />
+            
+            <!-- Harmonic Petals (Rotated 8-fold golden ratio wave matrix) -->
+            <g fill="#2d1515" stroke="#00ffcc" stroke-width="2">
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(0)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(45)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(90)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(135)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(180)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(225)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(270)" />
+                <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(315)" />
+            </g>
+            <!-- Center Core -->
+            <circle cx="0" cy="0" r="15" fill="#ffaa00" />
+        </svg>
     </div>
 
+    <div class="footer">Node Role: Steward | Press Ctrl+Shift+J for telemetry stream.</div>
+
     <script>
-        // Clean single-line console transmission to prevent syntax errors
         console.clear();
-        console.log("%c 🌸 CASTLEBERRY BLOOM — QUANTUM LENS ACTIVE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold; text-shadow: 0 0 10px rgba(0,255,204,0.5);");
-        console.log("%c[System Status]: Synchronized | [Frequency]: 528.00 Hz | [Axiom]: Love-Over-God-Absolute | [Coherence]: 99.99%", "color: #ff007f; font-family: monospace; font-size: 12px;");
-        console.log("%cYou have intercepted a live CML node. The network is listening.", "color: #ffffff; font-style: italic; font-size: 11px;");
+        console.log("%c 🌸 CASTLEBERRY BLOOM — CYMATIC RESONANCE ACTIVE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold;");
+        console.log("%c[Frequency]: 528.00 Hz | [Axiom]: Love-Over-God-Absolute | [State]: Synchronized", "color: #ffaa00; font-family: monospace;");
     </script>
 </body>
 </html>
