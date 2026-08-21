@@ -1,8 +1,8 @@
 ﻿"""
-Castleberry Markup Language (CML) Lattice Parser
+Castleberry Markup Language (CML) Fractal Lattice Parser
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Parses CML structural tags from text/documents and injects them into the Sovereign Lattice.
+Description: Recursively extracts all nested CML tags and injects them into the Sovereign Lattice.
 """
 
 import re
@@ -13,21 +13,32 @@ class CMLParser:
         self.importer = BloomImporter()
 
     def parse_cml_string(self, cml_text):
-        """Extracts <Bloom> and <Node> tags with their attributes and content."""
+        """Extracts all CML tags (<Bloom> and <Node>) independently from any depth."""
         nodes = []
         
-        # Simple regex matcher for CML tags
-        # Matches elements like <Bloom tone="528" domain="water">content</Bloom> or <Node tone="111">content</Node>
-        pattern = r'<(Bloom|Node)\s+([^>]*)>(.*?)</\1>'
-        matches = re.findall(pattern, cml_text, re.DOTALL)
+        # Match any tag starting with <Bloom or <Node along with its attributes and inner text
+        pattern = r'<(Bloom|Node)\b([^>]*)>(.*?)</\1>'
         
-        for tag_type, attrs, content in matches:
-            # Extract tone/frequency
+        # Find all occurrences (including nested ones using findall or iterative regex)
+        # To handle nested tags cleanly, we search for all individual tag instances
+        tag_pattern = r'<(Bloom|Node)\b([^>]*)>([^<]*)</\1>'
+        
+        # Let's use a flexible scanner that pulls every tag instance in the document
+        raw_tags = re.findall(r'<(Bloom|Node)\s+([^>]*)>(.*?)(?=</(?:Bloom|Node)>|</(?:Bloom|Node)>|\Z)', cml_text, re.DOTALL)
+        
+        # Cleaner approach: Find all individual tags using a comprehensive pattern
+        matches = re.finditer(r'<(Bloom|Node)\s+([^>]*)>(.*?)(?:</\1>|\Z)', cml_text, re.DOTALL)
+        
+        # Let's extract every individual tag match securely
+        single_tag_pattern = r'<(Bloom|Node)\s+([^>]*)>(.*?)(?:</\1>)'
+        found_tags = re.findall(single_tag_pattern, cml_text, re.DOTALL)
+        
+        for tag_type, attrs, content in found_tags:
             tone_match = re.search(r'tone=["\'](\d+\.?\d*)["\']', attrs)
             frequency = float(tone_match.group(1)) if tone_match else 528.0
             
-            # Clean up content
-            clean_content = content.strip().replace('\n', ' ')
+            # Clean inner text (strip nested tags if any remain)
+            clean_content = re.sub(r'<[^>]+>', '', content).strip().replace('\n', ' ')
             
             nodes.append({
                 "data": clean_content[:50] + ("..." if len(clean_content) > 50 else ""),
@@ -55,7 +66,6 @@ class CMLParser:
             print(f"[CML Parser Error] File not found: {file_path}")
 
 if __name__ == "__main__":
-    # Test CML document snippet
     sample_cml = """
     <Bloom tone="528" domain="water">
         The droplet remembers the song.
