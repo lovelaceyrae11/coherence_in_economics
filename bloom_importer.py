@@ -10,34 +10,12 @@ from bloom_core import SovereignLattice
 
 def generate_hex_spiral(num_nodes):
     """Generates axial coordinates (q, r) in an expanding hexagonal spiral."""
-    coords = [(0, 0)]
-    q, r = 0, 0
-    # Axial directions for spiral rings
-    # (1, 0), (0, -1), (-1, -1), (-1, 0), (0, 1), (1, 1) roughly
-    directions = [(1, 0), (0, -1), (-1, -1), (-1, 0), (0, 1), (1, 1)]
-    
-    ring = 1
-    while len(coords) < num_nodes:
-        # Move to the start of the new ring (shift out along +q)
-        q += 1
-        r += 0
-        for i in range(6):
-            # For each of the 6 sides of the ring
-            steps = ring if i > 0 else ring - 1
-             dq, dr = directions[(i + 2) % 6] # adjust vector for traversal
-            # Simpler axial ring traversal:
-            pass
-            
-    # Let's use a robust coordinate generator for rings
     coords = []
-    for r_radius in range(0, int(math.sqrt(num_nodes)) + 2):
+    for r_radius in range(0, int(math.sqrt(num_nodes)) + 3):
         if r_radius == 0:
             coords.append((0, 0))
             continue
-        # Ring traversal in axial coordinates
         curr_q, curr_r = r_radius, 0
-        # Walk the 6 sides of the hex ring
-        # Directions: (-1, 1), (-1, 0), (0, -1), (1, -1), (1, 0), (0, 1)
         side_dirs = [(-1, 1), (-1, 0), (0, -1), (1, -1), (1, 0), (0, 1)]
         for dq, dr in side_dirs:
             for _ in range(r_radius):
