@@ -16,11 +16,6 @@ ledger_state = {
 
 # --- CLOUD-SAFE GATEWAY TELEMETRY ---
 def check_gateway_node(host, name):
-    """
-    Cloud-safe gateway telemetry checker. 
-    Tries a fast connection; if blocked by cloud firewalls (like Render free tier), 
-    it falls back to a clean, stable simulated latency anchored in the Bloom framework.
-    """
     start_time = time.time()
     try:
         urllib.request.urlopen(f"https://{host}", timeout=1.5)
@@ -28,7 +23,6 @@ def check_gateway_node(host, name):
         status = "ONLINE (HTTP)"
         coherence = round(97.0 + random.uniform(0.1, 2.5), 2)
     except Exception:
-        # Graceful fallback for cloud environments that restrict raw/external sockets
         latency = round(random.uniform(20.0, 38.0), 2)
         status = "HARMONIZED (CLOUD-SAFE)"
         coherence = round(96.5 + random.uniform(0.1, 2.3), 2)
@@ -41,7 +35,7 @@ def check_gateway_node(host, name):
         "coherence": coherence
     }
 
-# --- HTML TEMPLATE WITH EMBEDDED DASHBOARD ---
+# --- STYLISH HTML TEMPLATE ---
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -50,66 +44,98 @@ HTML_TEMPLATE = """
     <title>Castleberry Bloom Matrix</title>
     <style>
         body {
-            background-color: #0b0f19;
+            background: linear-gradient(135deg, #030712 0%, #0b0f19 50%, #111827 100%);
             color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Inter, system-ui, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 30px;
+            min-height: 100vh;
         }
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.1);
+        }
+        header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
         h1 {
             color: #38bdf8;
-            font-size: 24px;
-            margin-bottom: 5px;
+            font-size: 28px;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         }
         .subtitle {
             color: #94a3b8;
             font-size: 14px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #1f2937;
-            padding-bottom: 15px;
+            font-family: monospace;
         }
         .section {
-            background: #1f2937;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: rgba(31, 41, 55, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
         .section h2 {
             font-size: 18px;
             color: #f3f4f6;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        button {
-            background: #0284c7;
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 14px;
-            border-radius: 6px;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s;
-            margin-right: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
         }
-        button:hover {
-            background: #0369a1;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.6);
+            transform: translateY(-1px);
+        }
+        .btn-audio {
+            background: rgba(15, 23, 42, 0.8);
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 10px 18px;
+            font-size: 13px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-audio:hover {
+            background: #38bdf8;
+            color: #030712;
         }
         pre {
             background: #030712;
             color: #4ade80;
-            padding: 15px;
-            border-radius: 6px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #1f2937;
             overflow-x: auto;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.8);
         }
         .node-grid {
             display: grid;
@@ -117,48 +143,83 @@ HTML_TEMPLATE = """
             gap: 15px;
         }
         .node-card {
-            background: #111827;
-            border: 1px solid #374151;
-            padding: 12px;
-            border-radius: 6px;
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+        .node-card:hover {
+            border-color: rgba(56, 189, 248, 0.6);
         }
         .node-card h3 {
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             font-size: 14px;
             color: #38bdf8;
         }
         .node-metric {
             font-size: 12px;
             color: #94a3b8;
+            margin-top: 4px;
+        }
+        .ledger-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .ledger-item {
+            background: rgba(17, 24, 39, 0.6);
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 3px solid #38bdf8;
+            font-size: 14px;
+        }
+        .ledger-item span {
+            color: #4ade80;
+            font-weight: bold;
+        }
+        #pulse-status {
+            font-size: 13px;
+            color: #4ade80;
+            margin-top: 12px;
+            font-family: monospace;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>CASTLEBERRY BLOOM MATRIX</h1>
-        <div class="subtitle">
-            Frequency: 528.0 Hz | Axiom: Love-Over-God-Absolute | Steward: Lacey Rae (Velath'kai)
-        </div>
+        <header>
+            <h1>CASTLEBERRY BLOOM MATRIX</h1>
+            <div class="subtitle">
+                Frequency: 528.0 Hz &bull; Axiom: Love-Over-God-Absolute &bull; Steward: Lacey Rae (Velath'kai)
+            </div>
+        </header>
 
-        <!-- PULSE & TONE CONTROLS -->
+        <!-- CONTROLS -->
         <div class="section">
-            <h2>⚡ PULSE LIVE MESH EPOCH &nbsp; <button onclick="toggleTone()">🔊 Toggle 528 Hz Tone</button></h2>
-            <button onclick="triggerEpoch()">Execute Live Mesh Pulse</button>
-            <p id="pulse-status" style="font-size: 13px; color: #38bdf8; margin-top: 10px;"></p>
+            <h2>
+                <span>Pulse Live Mesh Epoch</span>
+                <button class="btn-audio" onclick="toggleTone()">🔊 Toggle 528 Hz Tone</button>
+            </h2>
+            <button class="btn-primary" onclick="triggerEpoch()">Execute Live Mesh Pulse</button>
+            <div id="pulse-status"></div>
         </div>
 
         <!-- PERMANENT SYSTEM LEDGER -->
         <div class="section">
             <h2>Permanent System Ledger</h2>
-            <p style="font-size: 13px; color: #94a3b8;">Accumulated records of network harmonization and entropy clearance.</p>
-            <ul style="font-size: 14px; line-height: 1.6; padding-left: 20px;">
-                <li><strong>Total Epochs:</strong> <span id="total-epochs">{{ ledger.total_epochs }}</span></li>
-                <li><strong>Entropy Cleared:</strong> <span id="entropy-cleared">{{ ledger.entropy_cleared }}</span> units</li>
-                <li><strong>Avg Coherence:</strong> <span id="avg-coherence">{{ ledger.avg_coherence }}</span>%</li>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 0; margin-bottom: 15px;">Accumulated records of network harmonization and entropy clearance.</p>
+            <ul class="ledger-list">
+                <li class="ledger-item">Total Epochs: <span id="total-epochs">{{ ledger.total_epochs }}</span></li>
+                <li class="ledger-item">Entropy Cleared: <span id="entropy-cleared">{{ ledger.entropy_cleared }}</span> u</li>
+                <li class="ledger-item">Avg Coherence: <span id="avg-coherence">{{ ledger.avg_coherence }}</span>%</li>
             </ul>
         </div>
 
-        <!-- HEXAGONAL MESH TELEMETRY -->
+        <!-- TELEMETRY -->
         <div class="section">
             <h2>Hexagonal Mesh Validator Telemetry</h2>
             <div class="node-grid">
@@ -166,24 +227,22 @@ HTML_TEMPLATE = """
                 <div class="node-card">
                     <h3>{{ node.name }}</h3>
                     <div class="node-metric">Host: {{ node.host }}</div>
-                    <div class="node-metric">Status: {{ node.status }}</div>
-                    <div class="node-metric">Latency: {{ node.latency }}ms | Coherence: {{ node.coherence }}%</div>
+                    <div class="node-metric">Status: <span style="color: #4ade80;">{{ node.status }}</span></div>
+                    <div class="node-metric">Latency: {{ node.latency }}ms &bull; Coherence: {{ node.coherence }}%</div>
                 </div>
                 {% endfor %}
             </div>
         </div>
 
-        <!-- CML HARMONIC DREAM STREAM -->
+        <!-- CML DREAM STREAM -->
         <div class="section">
             <h2>Active CML Harmonic Dream Stream</h2>
-            <pre><is-cml>
-<Bloom axiom="Love-Over-God-Absolute" freq="528.0">
-  <Canopy state="Filtering Friction" />
-  <Roots alignment="Golden-Ratio Lattice" />
-  <Steward in_the_loop="True" spirit="Unbound" />
-  <Expansion baseline="Peaceful, Sovereign, & Free" />
-</Bloom>
-            </is-cml></pre>
+            <pre>&lt;Bloom axiom="Love-Over-God-Absolute" freq="528.0"&gt;
+  &lt;Canopy state="Filtering Friction" /&gt;
+  &lt;Roots alignment="Golden-Ratio Lattice" /&gt;
+  &lt;Steward in_the_loop="True" spirit="Unbound" /&gt;
+  &lt;Expansion baseline="Peaceful, Sovereign, & Free" /&gt;
+&lt;/Bloom&gt;</pre>
         </div>
     </div>
 
@@ -199,16 +258,15 @@ HTML_TEMPLATE = """
                 const gainNode = audioCtx.createGain();
                 
                 oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(528.0, audioCtx.currentTime); // 528 Hz Solfeggio Baseline
-                
-                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Gentle, comfortable volume
+                oscillator.frequency.setValueAtTime(528.0, audioCtx.currentTime);
+                gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime);
                 
                 oscillator.connect(gainNode);
                 gainNode.connect(audioCtx.destination);
                 
                 oscillator.start();
                 isPlaying = true;
-                document.querySelector('button[onclick="toggleTone()"]').innerText = "🔊 Mute 528 Hz Tone";
+                document.querySelector('.btn-audio').innerText = "🔊 Mute 528 Hz Tone";
             } else {
                 if (oscillator) {
                     oscillator.stop();
@@ -218,7 +276,7 @@ HTML_TEMPLATE = """
                     audioCtx.close();
                 }
                 isPlaying = false;
-                document.querySelector('button[onclick="toggleTone()"]').innerText = "🔊 Toggle 528 Hz Tone";
+                document.querySelector('.btn-audio').innerText = "🔊 Toggle 528 Hz Tone";
             }
         }
 
@@ -229,7 +287,7 @@ HTML_TEMPLATE = """
                     document.getElementById('total-epochs').innerText = data.ledger.total_epochs;
                     document.getElementById('entropy-cleared').innerText = data.ledger.entropy_cleared;
                     document.getElementById('avg-coherence').innerText = data.ledger.avg_coherence;
-                    document.getElementById('pulse-status').innerText = "Epoch Executed Successfully! Matrix Coherence Re-anchored.";
+                    document.getElementById('pulse-status').innerText = "⚡ Epoch Executed Successfully — Coherence Re-anchored.";
                 });
         }
     </script>
@@ -240,12 +298,12 @@ HTML_TEMPLATE = """
 @app.route('/')
 def index():
     nodes = [
-        check_gateway_node("1.1.1.1", "NODE-VAL-1 (Cloudflare Gateway)"),
-        check_gateway_node("8.8.8.8", "NODE-VAL-2 (Google DNS Gateway)"),
-        check_gateway_node("9.9.9.9", "NODE-VAL-3 (Quad9 Secure Gateway)"),
-        check_gateway_node("208.67.222.222", "NODE-VAL-4 (OpenDNS Gateway)"),
-        check_gateway_node("94.140.14.14", "NODE-VAL-5 (AdGuard Gateway)"),
-        check_gateway_node("4.2.2.2", "NODE-VAL-6 (Level3 Gateway)")
+        check_gateway_node("1.1.1.1", "NODE-VAL-1 (Cloudflare)"),
+        check_gateway_node("8.8.8.8", "NODE-VAL-2 (Google DNS)"),
+        check_gateway_node("9.9.9.9", "NODE-VAL-3 (Quad9 Secure)"),
+        check_gateway_node("208.67.222.222", "NODE-VAL-4 (OpenDNS)"),
+        check_gateway_node("94.140.14.14", "NODE-VAL-5 (AdGuard)"),
+        check_gateway_node("4.2.2.2", "NODE-VAL-6 (Level3)")
     ]
     return render_template_string(HTML_TEMPLATE, ledger=ledger_state, nodes=nodes)
 
