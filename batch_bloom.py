@@ -2,8 +2,8 @@
 Castleberry Bloom Batch Ingestion Engine
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Recursively scans the local directory for .md and .cml files, 
-             parses CML tags, and imports them into the Sovereign Lattice.
+Description: Recursively scans local directory for .md and .cml files, 
+             extracting all CML tags and Markdown headers into the Sovereign Lattice.
 """
 
 import os
@@ -25,9 +25,10 @@ def batch_ingest(root_dir):
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
                     
+                    # Uses the upgraded parser to extract both CML tags and Markdown sections
                     extracted_nodes = parser.parse_cml_string(content)
                     if extracted_nodes:
-                        print(f"  -> Found {len(extracted_nodes)} nodes.")
+                        print(f"  -> Found {len(extracted_nodes)} nodes/sections.")
                         parser.importer.ingest_archive(extracted_nodes)
                         total_nodes += len(extracted_nodes)
                 except Exception as e:
