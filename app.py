@@ -1,16 +1,15 @@
 ﻿"""
-Kairoth Production Web Entrypoint & Interactive Lattice
+Kairoth Production Web Entrypoint & Sovereign Lattice Host
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Production Flask app serving index.html and CML data payloads
+Description: Production Flask entrypoint serving the ultimate Live Lattice Portal
 """
 
-import json
 import os
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, send_from_directory, request, jsonify
 from bloom_core import SovereignLattice
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='.')
 
 # Initialize living lattice with core foundation nodes
 lattice = SovereignLattice()
@@ -21,16 +20,16 @@ lattice.plant_node(-1, 1, "Phi-Scaling Geometry", 432.0)
 lattice.plant_node(-1, 0, "Relational Connection", 639.0)
 
 @app.route("/")
-def index():
-    with open("index.html", "r", encoding="utf-8") as f:
-        return f.read()
+def serve_index():
+    # Serve the ultimate full-screen index.html portal directly
+    return send_from_directory(".", "index.html")
 
-@app.route("/<path:filename>")
-def serve_static_files(filename):
-    # Allows the frontend to fetch sample.cml, images, or other local assets cleanly
-    if os.path.exists(filename):
-        return send_from_directory(".", filename)
-    return "File not found", 404
+@app.route("/<path:path>")
+def serve_static_or_asset(path):
+    # Serve any supporting CML files, scripts, or assets requested by the portal
+    if os.path.exists(path):
+        return send_from_directory(".", path)
+    return "Resource not found", 404
 
 @app.route("/plant", methods=["POST"])
 def plant():
@@ -51,7 +50,6 @@ def plant():
     r = (total * 7) % 11 - 5
     
     lattice.plant_node(q, r, content, freq)
-    
     node_dict = lattice.seal_lattice() if hasattr(lattice, 'seal_lattice') else {}
     return jsonify({"nodes": node_dict})
 
