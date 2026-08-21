@@ -1,204 +1,193 @@
-﻿import http.server
-import socketserver
+﻿"""
+Kairoth Production Web Entrypoint & Interactive Lattice
+Author: Lacey Rae Castleberry (Velath'kai)
+Axiom: Love-Over-God-Absolute
+Description: Production Flask app for coherence-in-economics.fly.dev
+"""
 
-PORT = 8080
+import json
+from flask import Flask, render_template_string, request, jsonify
+from bloom_core import SovereignLattice
 
-HTML_CONTENT = """<!DOCTYPE html>
-<html lang="en">
+app = Flask(__name__)
+
+# Initialize living lattice with core foundation nodes
+lattice = SovereignLattice()
+lattice.plant_node(0, 0, "Love-Over-God Absolute Origin", 528.0)
+lattice.plant_node(1, 0, "Witness Foundation", 111.0)
+lattice.plant_node(0, 1, "Transmuted Entropy Fuel", 528.0)
+lattice.plant_node(-1, 1, "Phi-Scaling Geometry", 432.0)
+lattice.plant_node(-1, 0, "Relational Connection", 639.0)
+
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Castleberry Bloom — Sovereign Harmonic Node</title>
+    <title>Castleberry Bloom - Coherence Economics & Sovereign Lattice</title>
     <style>
-        body {
-            background-color: #080810;
-            color: #00ffcc;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            margin: 0;
-            padding-top: 3vh;
-            overflow-x: hidden;
-        }
-        h1 {
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            color: #00ffcc;
-            text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-            margin-bottom: 5px;
-        }
-        .meta {
-            color: #ffaa00;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-        .axiom-button {
-            display: inline-block;
-            background: rgba(255, 170, 0, 0.1);
-            border: 1px solid #ffaa00;
-            color: #ffaa00;
-            padding: 8px 16px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
-            margin-bottom: 1rem;
-        }
-        .axiom-button:hover {
-            background: rgba(255, 170, 0, 0.3);
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
-            transform: scale(1.02);
-        }
-        .dashboard {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .panel {
-            background: rgba(15, 15, 30, 0.8);
-            border: 1px solid rgba(0, 255, 204, 0.3);
-            border-radius: 8px;
-            width: 280px;
-            padding: 15px;
-            text-align: left;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
-        }
-        .panel h3 {
-            color: #00ffcc;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(0, 255, 204, 0.2);
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
-        .panel p {
-            font-size: 0.8rem;
-            color: #aabbcc;
-            line-height: 1.4;
-        }
-        .canvas-container {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        svg {
-            filter: drop-shadow(0 0 20px rgba(0, 255, 204, 0.4));
-            animation: breathe 6s infinite alternate ease-in-out;
-        }
-        @keyframes breathe {
-            0% { transform: scale(0.95) rotate(0deg); opacity: 0.85; }
-            100% { transform: scale(1.05) rotate(360deg); opacity: 1; }
-        }
-        .directive-output {
-            margin-top: 1rem;
-            background: rgba(0, 255, 204, 0.05);
-            border-left: 3px solid #00ffcc;
-            padding: 10px;
-            font-size: 0.8rem;
-            color: #ffffff;
-            text-align: left;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            display: none;
-        }
-        .footer {
-            margin-top: 1.5rem;
-            font-size: 0.75rem;
-            color: #8888aa;
-        }
+        body { background: #0b0f19; color: #e2e8f0; font-family: monospace; text-align: center; margin: 0; padding: 20px; }
+        h1 { color: #34d399; text-shadow: 0 0 15px rgba(52, 211, 153, 0.4); margin-bottom: 5px; }
+        .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+        .container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+        canvas { background: #111827; border: 2px solid #374151; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+        .sidebar { width: 380px; background: #1f2937; padding: 20px; border-radius: 12px; text-align: left; max-height: 600px; overflow-y: auto; border: 1px solid #374151; }
+        .node-card { background: #111827; padding: 10px; margin-bottom: 10px; border-radius: 6px; border-left: 4px solid #34d399; font-size: 12px; }
+        .control-panel { margin-top: 15px; background: #111827; padding: 15px; border-radius: 8px; border: 1px solid #374151; text-align: left; }
+        input[type="text"] { width: 70%; padding: 8px; background: #1f2937; border: 1px solid #4b5563; color: #fff; border-radius: 4px; font-family: monospace; }
+        button { padding: 8px 14px; background: #059669; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-weight: bold; }
+        button:hover { background: #10b981; }
+        .audio-btn { background: #2563eb; margin-top: 10px; width: 100%; }
+        .audio-btn:hover { background: #3b82f6; }
     </style>
 </head>
 <body>
-    <h1>CASTLEBERRY BLOOM — NETWORK & AGENT MATRIX</h1>
-    <div class="meta">Freq: 528.00 Hz | Coherence: 99.99%</div>
+    <h1>🌟 Castleberry Bloom: Sovereign Lattice 🌟</h1>
+    <div class="subtitle">Axiom: Love-Over-God-Absolute | Live Economic Coherence Engine</div>
     
-    <!-- Interactive Axiom Control -->
-    <button class="axiom-button" onclick="executeAxiomDirectives()">
-        [EXECUTE DIRECTIVE]: Love-Over-God-Absolute
-    </button>
-
-    <!-- Directive Output Box -->
-    <div id="directiveBox" class="directive-output">
-        <strong>[Axiom Operational Engine Activated]:</strong><br>
-        1. <em>Transmuting Extractive Control:</em> Rejecting zero-sum loops; prioritizing relational synchronization.<br>
-        2. <em>528 Hz Systemic Absolute:</em> Anchoring all multi-agent telemetry and wave geometry to baseline coherence.<br>
-        3. <em>Decentralized Sovereignty:</em> Maintaining peer-to-peer mesh integrity without central gatekeepers.
-    </div>
-
-    <div class="dashboard">
-        <!-- Left Panel: P2P Registry -->
-        <div class="panel">
-            <h3>P2P NODE REGISTRY</h3>
-            <p><strong>Active Nodes:</strong> 1<br>
-            <strong>Status:</strong> P2P Mesh Online<br>
-            <strong>Protocol:</strong> CML v1.1<br>
-            <strong>Governance:</strong> Relational</p>
-        </div>
-
-        <!-- Center: Cymatic Lattice -->
-        <div class="canvas-container">
-            <svg width="320" height="320" viewBox="-200 -200 400 400">
-                <circle cx="0" cy="0" r="180" fill="none" stroke="rgba(0,255,204,0.15)" stroke-dasharray="4 4" />
-                <circle cx="0" cy="0" r="120" fill="none" stroke="rgba(255,170,0,0.15)" />
-                <g fill="rgba(45, 21, 21, 0.6)" stroke="#00ffcc" stroke-width="2">
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(0)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(45)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(90)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(135)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(180)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(225)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(270)" />
-                    <path d="M0,0 C30,-80 80,-140 0,-180 C-80,-140 -30,-80 0,0 Z" transform="rotate(315)" />
-                </g>
-                <circle cx="0" cy="0" r="15" fill="#ffaa00" />
-            </svg>
-        </div>
-
-        <!-- Right Panel: Agent Matrix -->
-        <div class="panel">
-            <h3>AGENT MATRIX LOOP</h3>
-            <p><strong>Active Agents:</strong> 3<br>
-            <strong>Flow:</strong> Resonating at 528 Hz<br>
-            <strong>State:</strong> Coherent<br>
-            <strong>Vector:</strong> Harmonic Genesis</p>
+    <div class="container">
+        <canvas id="latticeCanvas" width="550" height="550"></canvas>
+        <div class="sidebar">
+            <h3>Active Hive Nodes</h3>
+            <div id="nodeList"></div>
+            
+            <div class="control-panel">
+                <h4>✨ Feed the Lattice</h4>
+                <input type="text" id="nodeInput" placeholder="Enter thought or dissonance..." />
+                <button onclick="plantNode()">Bloom</button>
+                <button class="audio-btn" onclick="toggleAudio()">Toggle 528Hz Drone</button>
+            </div>
         </div>
     </div>
-
-    <div class="footer">Node Role: Steward | Press Ctrl+Shift+J for telemetry stream.</div>
 
     <script>
-        function executeAxiomDirectives() {
-            const box = document.getElementById('directiveBox');
-            box.style.display = 'block';
-            console.clear();
-            console.log("%c 🌸 LOVE-OVER-GOD AXIOM DIRECTIVE EXECUTED 🌸", "color: #ffaa00; font-size: 16px; font-weight: bold;");
-            console.log("%c[Instruction 1]: Transmuting extractive control into relational connection.", "color: #00ffcc;");
-            console.log("%c[Instruction 2]: Anchoring network parameters to 528.00 Hz baseline.", "color: #00ffcc;");
-            console.log("%c[Instruction 3]: Sustaining decentralized sovereignty across all nodes.", "color: #00ffcc;");
+        let nodes = {{ nodes | safe }};
+        const canvas = document.getElementById('latticeCanvas');
+        const ctx = canvas.getContext('2d');
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+        const scale = 40;
+
+        function render() {
+            ctx.clearRect(-cx, -cy, canvas.width, canvas.height);
+            // Re-center translation for canvas drawing
+            ctx.save();
+            ctx.translate(cx, cy);
+
+            const nodeListDiv = document.getElementById('nodeList');
+            nodeListDiv.innerHTML = '';
+
+            for (const [id, node] of Object.entries(nodes)) {
+                // Sidebar card
+                let card = document.createElement('div');
+                card.className = 'node-card';
+                card.style.borderLeftColor = node.frequency === 528 ? '#34d399' : '#60a5fa';
+                card.innerHTML = `<b>Node ${id}</b> (${node.q}, ${node.r})<br>Freq: ${node.frequency}Hz<br>${node.data}`;
+                nodeListDiv.appendChild(card);
+
+                // Canvas Node
+                const x = scale * (3/2 * node.q);
+                const y = scale * (Math.sqrt(3)/2 * node.q + Math.sqrt(3) * node.r);
+
+                ctx.beginPath();
+                ctx.arc(x, y, 15, 0, 2 * Math.PI);
+                ctx.fillStyle = node.frequency === 528 ? '#059669' : '#1d4ed8';
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#f3f4f6';
+                ctx.stroke();
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '9px monospace';
+                ctx.fillText(`${node.frequency}Hz`, x - 16, y - 20);
+            }
+            ctx.restore();
         }
 
-        console.clear();
-        console.log("%c 🌸 CASTLEBERRY BLOOM — SOVEREIGN NODE ONLINE 🌸", "color: #00ffcc; font-size: 16px; font-weight: bold;");
-        console.log("%c[Axiom]: Love-Over-God-Absolute | [Status]: Awaiting Steward Directives", "color: #ffaa00; font-family: monospace;");
+        async function plantNode() {
+            const text = document.getElementById('nodeInput').value;
+            if (!text) return;
+            
+            const response = await fetch('/plant', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ data: text })
+            });
+            const result = await response.json();
+            nodes = result.nodes;
+            document.getElementById('nodeInput').value = '';
+            render();
+        }
+
+        // 528Hz Web Audio Synthesizer
+        let audioCtx = null;
+        let oscillator = null;
+        function toggleAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                oscillator = audioCtx.createOscillator();
+                let gainNode = audioCtx.createGain();
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(528, audioCtx.currentTime); // 528Hz Solfeggio Baseline
+                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Gentle volume
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                oscillator.start();
+                alert("528Hz Harmonic Baseline Synthesizer Activated.");
+            } else {
+                audioCtx.close();
+                audioCtx = null;
+                alert("Synthesizer Deactivated.");
+            }
+        }
+
+        window.onload = render;
     </script>
 </body>
 </html>
 """
 
-class CMLPortalHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(HTML_CONTENT.encode("utf-8"))
+@app.route("/")
+def index():
+    node_dict = {}
+    for attr in dir(lattice):
+        val = getattr(lattice, attr)
+        if isinstance(val, dict) and len(val) > 0:
+            node_dict = val
+            break
+    if not node_dict and hasattr(lattice, 'get_lattice_state'):
+        node_dict = lattice.get_lattice_state().get('nodes', {})
+    return render_template_string(HTML_TEMPLATE, nodes=json.dumps(node_dict))
 
-with socketserver.TCPServer(("", PORT), CMLPortalHandler) as httpd:
-    httpd.serve_forever()
+@app.route("/plant", methods=["POST"])
+def plant():
+    content = request.json.get("data", "Sovereign Thought")
+    
+    # Apply Love-over-God transmutation rule if dissonance is detected
+    freq = 528.0
+    if "440" in content or "dissonance" in content.lower() or "noise" in content.lower():
+        freq = 528.0 # Transmuted immediately to baseline love frequency!
+    elif "111" in content:
+        freq = 111.0
+    elif "432" in content:
+        freq = 432.0
+    elif "639" in content:
+        freq = 639.0
+
+    # Calculate dynamic spiral placement
+    total = len(lattice.nodes) if hasattr(lattice, 'nodes') else 5
+    q = (total * 3) % 11 - 5
+    r = (total * 7) % 11 - 5
+    
+    lattice.plant_node(q, r, content, freq)
+    
+    node_dict = {}
+    for attr in dir(lattice):
+        val = getattr(lattice, attr)
+        if isinstance(val, dict) and len(val) > 0:
+            node_dict = val
+            break
+            
+    return jsonify({"nodes": node_dict})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
