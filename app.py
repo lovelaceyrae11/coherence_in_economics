@@ -65,10 +65,9 @@ HTML_TEMPLATE = """
         const ctx = canvas.getContext('2d');
         const cx = canvas.width / 2;
         const cy = canvas.height / 2;
-        const scale = 40;
 
         function render() {
-            ctx.clearRect(-cx, -cy, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.save();
             ctx.translate(cx, cy);
 
