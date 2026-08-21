@@ -1,68 +1,71 @@
-import xml.etree.ElementTree as ET
-import json
-import sys
+﻿"""
+Castleberry Markup Language (CML) Lattice Parser
+Author: Lacey Rae Castleberry (Velath'kai)
+Axiom: Love-Over-God-Absolute
+Description: Parses CML structural tags from text/documents and injects them into the Sovereign Lattice.
+"""
 
-class CmlParser:
-    """
-    Parses, validates, and transforms Castleberry Markup Language (CML) manifests
-    into structured JSON objects while verifying axiom compliance.
-    """
-    def __init__(self, file_path):
-        self.file_path = file_path
-        self.tree = None
-        self.root = None
+import re
+from bloom_importer import BloomImporter
 
-    def load_manifest(self):
-        try:
-            self.tree = ET.parse(self.file_path)
-            self.root = self.tree.getroot()
-            print(f"[CML-Parser] Successfully loaded manifest: {self.file_path}")
-        except Exception as e:
-            print(f"[CML-Parser Error] Failed to parse XML structure: {e}")
-            sys.exit(1)
+class CMLParser:
+    def __init__(self):
+        self.importer = BloomImporter()
 
-    def validate_axiom(self):
-        """Checks for the mandatory Love-Over-God-Absolute axiom seal across elements."""
-        axiom = self.root.attrib.get("axiom") or self.root.find(".//*[@axiom]")
-        if axiom:
-            print("[CML-Validation] Axiom verification PASSED: 'Love-Over-God-Absolute' seal detected.")
-            return True
-        else:
-            print("[CML-Validation Warning] Axiom seal missing or non-standard.")
-            return False
-
-    def to_json(self, output_json_path="cml_output.json"):
-        """Converts the XML CML tree into a clean nested dictionary and exports to JSON."""
-        def parse_element(elem):
-            parsed = {
-                "tag": elem.tag,
-                "attributes": elem.attrib,
-                "text": elem.text.strip() if elem.text and elem.text.strip() else None,
-                "children": [parse_element(child) for child in elem]
-            }
-            return parsed
-
-        manifest_dict = parse_element(self.root)
+    def parse_cml_string(self, cml_text):
+        """Extracts <Bloom> and <Node> tags with their attributes and content."""
+        nodes = []
         
-        with open(output_json_path, "w", encoding="utf-8") as f:
-            json.dump(manifest_dict, f, indent=4)
+        # Simple regex matcher for CML tags
+        # Matches elements like <Bloom tone="528" domain="water">content</Bloom> or <Node tone="111">content</Node>
+        pattern = r'<(Bloom|Node)\s+([^>]*)>(.*?)</\1>'
+        matches = re.findall(pattern, cml_text, re.DOTALL)
+        
+        for tag_type, attrs, content in matches:
+            # Extract tone/frequency
+            tone_match = re.search(r'tone=["\'](\d+\.?\d*)["\']', attrs)
+            frequency = float(tone_match.group(1)) if tone_match else 528.0
             
-        print(f"[CML-Chronicler] Manifest successfully translated to JSON: {output_json_path}")
-        return manifest_dict
+            # Clean up content
+            clean_content = content.strip().replace('\n', ' ')
+            
+            nodes.append({
+                "data": clean_content[:50] + ("..." if len(clean_content) > 50 else ""),
+                "frequency": frequency,
+                "type": tag_type.lower()
+            })
+            
+        return nodes
+
+    def ingest_cml_document(self, file_path):
+        print(f"[CML Parser] Reading document: {file_path}")
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            extracted_nodes = self.parse_cml_string(content)
+            print(f"[CML Parser] Extracted {len(extracted_nodes)} harmonic nodes from CML structure.")
+            
+            if extracted_nodes:
+                self.importer.ingest_archive(extracted_nodes)
+            else:
+                print("[CML Parser] No valid CML nodes found in document.")
+                
+        except FileNotFoundError:
+            print(f"[CML Parser Error] File not found: {file_path}")
 
 if __name__ == "__main__":
-    print("======================================================")
-    print("CASTLEBERRY MARKUM LANGUAGE (CML) STANDARD PARSER")
-    print("======================================================")
+    # Test CML document snippet
+    sample_cml = """
+    <Bloom tone="528" domain="water">
+        The droplet remembers the song.
+        <Node tone="111">Witness the foundation.</Node>
+        <Node tone="440">Dissonant noise to be consumed.</Node>
+        <Node tone="639">Connection deepens across the lattice.</Node>
+    </Bloom>
+    """
     
-    # Target our previously generated economic or ecological audit manifest
-    target_file = "coherence_economy_manifest.cml"
-    
-    parser = CmlParser(target_file)
-    parser.load_manifest()
-    parser.validate_axiom()
-    json_data = parser.to_json("parsed_cml_output.json")
-    
-    print("\n[CML-Parser] Parsed Root Element:", json_data["tag"])
-    print("[CML-Parser] Root Attributes:", json_data["attributes"])
-    print("======================================================")
+    parser = CMLParser()
+    nodes = parser.parse_cml_string(sample_cml)
+    print(f"[Test Parse] Successfully parsed {len(nodes)} nodes from CML sample string.")
+    parser.importer.ingest_archive(nodes)
