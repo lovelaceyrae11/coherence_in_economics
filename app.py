@@ -2,11 +2,12 @@
 Kairoth Production Web Entrypoint & Interactive Lattice
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Production Flask app serving the full index.html frontend
+Description: Production Flask app serving index.html and CML data payloads
 """
 
 import json
-from flask import Flask, request, jsonify
+import os
+from flask import Flask, request, jsonify, send_from_directory
 from bloom_core import SovereignLattice
 
 app = Flask(__name__)
@@ -21,9 +22,15 @@ lattice.plant_node(-1, 0, "Relational Connection", 639.0)
 
 @app.route("/")
 def index():
-    # Serve your actual graphical index.html frontend file directly
     with open("index.html", "r", encoding="utf-8") as f:
         return f.read()
+
+@app.route("/<path:filename>")
+def serve_static_files(filename):
+    # Allows the frontend to fetch sample.cml, images, or other local assets cleanly
+    if os.path.exists(filename):
+        return send_from_directory(".", filename)
+    return "File not found", 404
 
 @app.route("/plant", methods=["POST"])
 def plant():
