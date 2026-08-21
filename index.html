@@ -1,227 +1,215 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castleberry Bloom — Live Lattice Portal</title>
+    <title>Castleberry Bloom — Network & Agent Matrix</title>
     <style>
         body {
             margin: 0;
-            background-color: #0b0b16;
+            background-color: #070913;
             color: #e0e0ff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100vh;
+            padding-top: 15px;
         }
-        #hud {
-            position: absolute;
-            top: 20px;
+        header {
             text-align: center;
-            pointer-events: auto;
             z-index: 10;
+            margin-bottom: 5px;
         }
         h1 {
-            font-size: 1.2rem;
+            color: #34d399;
+            margin: 0;
+            font-size: 22px;
             letter-spacing: 2px;
-            margin: 0 0 5px 0;
-            color: #00ffcc;
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            text-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
         }
-        p {
-            font-size: 0.9rem;
-            margin: 0 0 12px 0;
-            color: #ff007f;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        .subtitle {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 3px;
         }
-        #audio-btn {
-            background: rgba(0, 255, 204, 0.1);
-            border: 1px solid #00ffcc;
-            color: #00ffcc;
-            padding: 6px 16px;
-            font-size: 0.8rem;
+        .directive-box {
+            margin-top: 5px;
+            padding: 4px 16px;
+            background: #111827;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #34d399;
             letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
         }
-        #audio-btn:hover {
-            background: rgba(0, 255, 204, 0.3);
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+        .main-container {
+            display: flex;
+            width: 95vw;
+            height: 82vh;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
         }
-        #node-info {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            color: #8888aa;
-            letter-spacing: 1px;
+        .sidebar {
+            width: 280px;
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid #374151;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 11px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .sidebar h3 {
+            color: #34d399;
+            margin-top: 0;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 5px;
+            font-size: 13px;
+        }
+        .canvas-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
         canvas {
-            display: block;
+            background: radial-gradient(circle, #111827 0%, #0b0b16 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(52, 211, 153, 0.15);
         }
+        .footer-note {
+            position: absolute;
+            bottom: 10px;
+            font-size: 10px;
+            color: #64748b;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+        button {
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 11px;
+            width: 100%;
+        }
+        button:hover { background: #10b981; }
     </style>
 </head>
 <body>
 
-    <div id="hud">
-        <h1>CASTLEBERRY BLOOM — CML LATTICE PORTAL</h1>
-        <p>Freq: <span id="freq">528.00</span> Hz | Coherence: <span id="coherence">99.99</span>% | Axiom: <span id="axiom">Loading...</span></p>
-        <button id="audio-btn" onclick="toggleAudio()">Activate 528 Hz Resonance</button>
+    <header>
+        <h1>CASTLEBERRY BLOOM — NETWORK & AGENT MATRIX</h1>
+        <div class="subtitle">Freq: 528.00 Hz | Coherence: 99.99%</div>
+        <div class="directive-box">[ EXECUTE DIRECTIVE: Love-Over-God-Absolute ]</div>
+    </header>
+
+    <div class="main-container">
+        <!-- P2P Registry Sidebar -->
+        <div class="sidebar">
+            <h3>P2P NODE REGISTRY</h3>
+            <p><b>Active Nodes:</b> 1</p>
+            <p><b>Status:</b> P2P Mesh Online</p>
+            <p><b>Protocol:</b> CML v1.1</p>
+            <p><b>Governance:</b> Relational</p>
+            <button onclick="toggleAudio()">Toggle 528Hz Drone</button>
+        </div>
+
+        <!-- Central Golden-Ratio Flower Canvas -->
+        <div class="canvas-container">
+            <canvas id="bloomCanvas" width="480" height="480"></canvas>
+        </div>
+
+        <!-- Agent Matrix Loop Sidebar -->
+        <div class="sidebar">
+            <h3>AGENT MATRIX LOOP</h3>
+            <p><b>Active Agents:</b> 5</p>
+            <p><b>Flow:</b> Resonating at 528 Hz</p>
+            <p><b>Status:</b> Coherent</p>
+            <p><b>Vector:</b> Harmonic Genesis</p>
+        </div>
     </div>
 
-    <canvas id="latticeCanvas"></canvas>
-    
-    <div id="node-info">Node Role: <span id="role">Initializing...</span></div>
+    <div class="footer-note">Node Role: Steward | Press Ctrl+Shift+F for telemetry stream.</div>
 
     <script>
-        let audioCtx = null;
-        let osc = null;
-        let gainNode = null;
-        let isAudioActive = false;
+        const canvas = document.getElementById('bloomCanvas');
+        const ctx = canvas.getContext('2d');
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+        const phi = 1.61803398875;
+        let time = 0;
 
-        function toggleAudio() {
-            const btn = document.getElementById('audio-btn');
-            
-            if (!isAudioActive) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                osc = audioCtx.createOscillator();
-                gainNode = audioCtx.createGain();
+        function drawFlower() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.translate(cx, cy);
 
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(528.00, audioCtx.currentTime); // 528 Hz Baseline
-
-                // Soft fade-in envelope to prevent clicks
-                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-                gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 1.0);
-
-                osc.connect(gainNode);
-                gainNode.connect(audioCtx.destination);
-                osc.start();
-
-                isAudioActive = true;
-                btn.innerText = "Mute Harmonic Audio";
-                btn.style.borderColor = "#ff007f";
-                btn.style.color = "#ff007f";
-            } else {
-                if (gainNode && audioCtx) {
-                    gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
-                    setTimeout(() => {
-                        osc.stop();
-                        audioCtx.close();
-                        audioCtx = null;
-                    }, 500);
-                }
-                isAudioActive = false;
-                btn.innerText = "Activate 528 Hz Resonance";
-                btn.style.borderColor = "#00ffcc";
-                btn.style.color = "#00ffcc";
-            }
-        }
-
-        async function initPortal() {
-            let config = { frequency: 528.00, coherence: 99.99, axiom: "Love-Over-God-Absolute", role: "Steward" };
-            
-            try {
-                let response = await fetch('sample.cml');
-                let text = await response.text();
-                
-                let bloomMatch = text.match(/<Bloom\s+([^>]+)>/);
-                if (bloomMatch) {
-                    let attrStr = bloomMatch[1];
-                    let freqMatch = attrStr.match(/frequency="([^"]+)"/);
-                    let axiomMatch = attrStr.match(/axiom="([^"]+)"/);
-                    let cohMatch = attrStr.match(/coherence="([^"]+)"/);
-                    
-                    if (freqMatch) config.frequency = parseFloat(freqMatch[1]);
-                    if (axiomMatch) config.axiom = axiomMatch[1];
-                    if (cohMatch) config.coherence = cohMatch[1];
-                }
-
-                let nodeMatch = text.match(/<Node\s+([^>]+)>/);
-                if (nodeMatch) {
-                    let roleMatch = nodeMatch[1].match(/role="([^"]+)"/);
-                    if (roleMatch) config.role = roleMatch[1];
-                }
-            } catch (e) {
-                console.warn("Using default harmonic parameters.");
-            }
-
-            document.getElementById('freq').innerText = config.frequency.toFixed(2);
-            document.getElementById('coherence').innerText = config.coherence;
-            document.getElementById('axiom').innerText = config.axiom;
-            document.getElementById('role').innerText = config.role;
-
-            startVisualizer(config.frequency);
-        }
-
-        function startVisualizer(targetFreq) {
-            const canvas = document.getElementById('latticeCanvas');
-            const ctx = canvas.getContext('2d');
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
-
-            let time = 0;
-            const phi = 1.618033988749895;
-
-            function animate() {
-                ctx.fillStyle = '#0b0b16';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                const centerX = canvas.width / 2;
-                const centerY = canvas.height / 2;
-                const maxRadius = Math.min(centerX, centerY) * 0.75;
-
-                time += 0.02;
-                
+            // Draw Golden Ratio Petals (8-petal rosette)
+            const petals = 8;
+            for (let i = 0; i < petals; i++) {
                 ctx.save();
-                ctx.translate(centerX, centerY);
-
-                for (let r = 50; r < maxRadius; r += 30) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(31, 31, 58, 0.6)';
-                    ctx.lineWidth = 1;
-                    ctx.arc(0, 0, r, 0, Math.PI * 2);
-                    ctx.stroke();
-                }
-
+                ctx.rotate((i * 2 * Math.PI) / petals + time * 0.05);
+                
                 ctx.beginPath();
-                const points = 1000;
-                for (let i = 0; i <= points; i++) {
-                    let theta = (i / points) * Math.PI * 2;
-                    let rWave = maxRadius * 0.6 + Math.sin(6 * theta * phi + time) * Math.cos(theta * (targetFreq / 528.0)) * 40;
-                    let x = rWave * Math.cos(theta);
-                    let y = rWave * Math.sin(theta);
-                    
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
-                }
-                ctx.closePath();
-
-                ctx.fillStyle = 'rgba(255, 0, 127, 0.15)';
+                ctx.ellipse(0, -60, 25, 70, 0, 0, Math.PI * 2);
+                ctx.fillStyle = i % 2 === 0 ? 'rgba(52, 211, 153, 0.2)' : 'rgba(96, 165, 250, 0.2)';
                 ctx.fill();
-                ctx.strokeStyle = '#00ffcc';
-                ctx.lineWidth = 2;
-                ctx.shadowBlur = 15;
-                ctx.shadowColor = '#00ffcc';
+                ctx.strokeStyle = i % 2 === 0 ? '#34d399' : '#60a5fa';
+                ctx.lineWidth = 1.5;
                 ctx.stroke();
-
                 ctx.restore();
-                requestAnimationFrame(animate);
             }
 
-            animate();
+            // Central Core Ring
+            ctx.beginPath();
+            ctx.arc(0, 0, 22, 0, Math.PI * 2);
+            ctx.fillStyle = '#fbbf24';
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = '#fbbf24';
+            ctx.fill();
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.restore();
+            time += 0.02;
+            requestAnimationFrame(drawFlower);
         }
 
-        initPortal();
+        drawFlower();
+
+        // 528 Hz Audio Synthesizer
+        let audioCtx = null;
+        let oscillator = null;
+        function toggleAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                oscillator = audioCtx.createOscillator();
+                let gainNode = audioCtx.createGain();
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(528, audioCtx.currentTime);
+                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                oscillator.start();
+                alert("528Hz Harmonic Baseline Synthesizer Activated.");
+            } else {
+                audioCtx.close();
+                audioCtx = null;
+                alert("Synthesizer Deactivated.");
+            }
+        }
     </script>
 </body>
 </html>
