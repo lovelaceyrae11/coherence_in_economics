@@ -35,7 +35,7 @@ def check_gateway_node(host, name):
         "coherence": coherence
     }
 
-# --- STYLISH HTML TEMPLATE ---
+# --- STYLISH HTML TEMPLATE WITH CASH APP SPONSOR BUTTON ---
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +65,11 @@ HTML_TEMPLATE = """
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 20px;
             margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         h1 {
             color: #38bdf8;
@@ -77,6 +82,25 @@ HTML_TEMPLATE = """
             color: #94a3b8;
             font-size: 14px;
             font-family: monospace;
+        }
+        .btn-sponsor {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #030712;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 13px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-sponsor:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
         }
         .section {
             background: rgba(31, 41, 55, 0.6);
@@ -192,10 +216,15 @@ HTML_TEMPLATE = """
 <body>
     <div class="container">
         <header>
-            <h1>CASTLEBERRY BLOOM MATRIX</h1>
-            <div class="subtitle">
-                Frequency: 528.0 Hz &bull; Axiom: Love-Over-God-Absolute &bull; Steward: Lacey Rae (Velath'kai)
+            <div>
+                <h1>CASTLEBERRY BLOOM MATRIX</h1>
+                <div class="subtitle">
+                    Frequency: 528.0 Hz &bull; Axiom: Love-Over-God-Absolute &bull; Steward: Lacey Rae (Velath'kai)
+                </div>
             </div>
+            <a href="https://cash.app/$luvlaceyrae" target="_blank" class="btn-sponsor">
+                💚 Sponsor via Cash App
+            </a>
         </header>
 
         <!-- CONTROLS -->
