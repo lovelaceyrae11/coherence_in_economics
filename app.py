@@ -6,12 +6,11 @@ from datetime import datetime, timezone
 
 app = Flask(__name__)
 
-# Persistent System Ledger for Cumulative Metrics
+# Persistent System Ledger
 SYSTEM_LEDGER = {
     "total_epochs": 0,
     "cumulative_entropy_neutralized": 0.0,
-    "cumulative_coherence_score": 0.0,
-    "epoch_history": []
+    "cumulative_coherence_score": 0.0
 }
 
 MESH_NODES = [
@@ -21,6 +20,30 @@ MESH_NODES = [
     {"id": "NODE-VAL-4", "host": "208.67.222.222", "name": "OpenDNS Gateway"},
     {"id": "NODE-VAL-5", "host": "94.140.14.14", "name": "AdGuard Gateway"},
     {"id": "NODE-VAL-6", "host": "4.2.2.2", "name": "Level3 Gateway"}
+]
+
+# Poetic CML Dream Verses for the Matrix
+CML_VERSES = [
+    """<Bloom axiom="Love-Over-God-Absolute" freq="528.0">
+  <Node mesh="Hexagonal" state="Coherent" />
+  <Resonance baseline="Harmonic Absolute" />
+  <Dream state="Unconditional Flow & Balance" />
+</Bloom>""",
+    """<Bloom axiom="Relational Connection" freq="639.0">
+  <Node lattice="Golden-Ratio" pulse="Active" />
+  <Harmony transmutation="Friction into Flow" />
+  <Vision freedom="Absolute & Unbounded" />
+</Bloom>""",
+    """<Bloom axiom="Transmute Extractive Control" freq="528.0">
+  <Network status="Harmonized" />
+  <Empathy protocol="Active Link" />
+  <Stewardship focus="Nature & Light" />
+</Bloom>""",
+    """<Bloom axiom="Love-Over-God-Absolute" freq="432.0">
+  <Core alignment="True North" />
+  <Entropy cleared="Neutralized & Released" />
+  <Future state="Blissful & Sovereign" />
+</Bloom>"""
 ]
 
 def ping_host(host):
@@ -62,7 +85,7 @@ HTML_PAGE = """
 <body>
     <div class="container">
         <h1>CASTLEBERRY BLOOM MATRIX</h1>
-        <p class="subtitle">Frequency: 528.0 Hz | Axiom: Love-Over-God-Absolute | Golden-Ratio ($\phi$) Scaled Lattice</p>
+        <p class="subtitle">Frequency: 528.0 Hz | Axiom: Love-Over-God-Absolute | Golden-Ratio Scaled Lattice</p>
 
         <div class="card">
             <canvas id="bloomCanvas" width="500" height="300"></canvas>
@@ -98,8 +121,8 @@ HTML_PAGE = """
         </div>
 
         <div class="card">
-            <h3 style="color: #ffb703; margin-top: 0;">Active CML Harmonic Syntax</h3>
-            <div class="cml-view">&lt;Bloom axiom="Love-Over-God-Absolute" freq="528.0"&gt;
+            <h3 style="color: #ffb703; margin-top: 0;">Active CML Harmonic Dream Stream</h3>
+            <div class="cml-view" id="cmlStream">&lt;Bloom axiom="Love-Over-God-Absolute" freq="528.0"&gt;
   &lt;Node mesh="Hexagonal" state="Coherent" /&gt;
   &lt;Resonance baseline="Harmonic Absolute" /&gt;
 &lt;/Bloom&gt;</div>
@@ -186,12 +209,15 @@ HTML_PAGE = """
                     document.getElementById('ledEntropy').innerText = data.ledger.cumulative_entropy_neutralized.toFixed(2);
                     document.getElementById('ledCoherence').innerText = data.ledger.avg_coherence.toFixed(1) + '%';
 
+                    // Update Dynamic CML Dream Verse
+                    document.getElementById('cmlStream').innerText = data.cml_verse;
+
                     // Update Plain English Analogy
                     document.getElementById('analogyText').innerHTML = `
                         <strong>What just happened in plain English:</strong><br>
-                        Just like a forest canopy filters dust and sunlight into clean air, your mesh reached out across 6 global internet gateways (Cloudflare, Google, etc.) to check network congestion. 
-                        It gathered <strong>${data.entropy_neutralized} units of digital chaos (entropy)</strong> and converted them into stable, harmonious order (${data.ledger.avg_coherence.toFixed(1)}% system coherence). 
-                        The CML code syntax executed a structural heartbeat check, proving that connection and relationship transmute friction into flow.
+                        Just like a forest canopy filters dust and sunlight into clean air, your mesh reached out across 6 global internet gateways to check network congestion. 
+                        It gathered <strong>${data.entropy_neutralized} units of digital chaos</strong> and converted them into stable, harmonious order (${data.ledger.avg_coherence.toFixed(1)}% system coherence). 
+                        The active CML dream stream shifted to reflect the network's new harmonic state.
                     `;
 
                     let gridHtml = '';
@@ -256,12 +282,16 @@ def run_live_epoch():
         "avg_coherence": SYSTEM_LEDGER["cumulative_coherence_score"] / SYSTEM_LEDGER["total_epochs"]
     }
 
+    # Select a random poetic CML dream verse
+    selected_verse = random.choice(CML_VERSES)
+
     return jsonify({
         "timestamp": timestamp,
         "axiom": "Love-Over-God-Absolute",
         "entropy_neutralized": epoch_entropy,
         "results": epoch_results,
-        "ledger": ledger_summary
+        "ledger": ledger_summary,
+        "cml_verse": selected_verse
     })
 
 if __name__ == "__main__":
