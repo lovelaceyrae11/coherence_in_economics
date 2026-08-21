@@ -92,7 +92,7 @@ HTML_TEMPLATE = """
 
 @app.route("/")
 def index():
-    node_data = json.dumps(lattice.nodes)
+    node_data = json.dumps(node_dict)
     return render_template_string(HTML_TEMPLATE, nodes=node_data)
 
 if __name__ == "__main__":
