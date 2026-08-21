@@ -2,7 +2,7 @@
 Castleberry Markup Language (CML) Fractal Lattice Parser
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Recursively extracts all nested CML tags and injects them into the Sovereign Lattice.
+Description: Extracts all Bloom and Node elements independently and injects them into the Sovereign Lattice.
 """
 
 import re
@@ -13,39 +13,42 @@ class CMLParser:
         self.importer = BloomImporter()
 
     def parse_cml_string(self, cml_text):
-        """Extracts all CML tags (<Bloom> and <Node>) independently from any depth."""
         nodes = []
         
-        # Match any tag starting with <Bloom or <Node along with its attributes and inner text
-        pattern = r'<(Bloom|Node)\b([^>]*)>(.*?)</\1>'
+        # 1. Find all <Node> elements first
+        node_pattern = r'<Node\s+([^>]*)>(.*?)</Node>'
+        node_matches = re.findall(node_pattern, cml_text, re.DOTALL)
         
-        # Find all occurrences (including nested ones using findall or iterative regex)
-        # To handle nested tags cleanly, we search for all individual tag instances
-        tag_pattern = r'<(Bloom|Node)\b([^>]*)>([^<]*)</\1>'
-        
-        # Let's use a flexible scanner that pulls every tag instance in the document
-        raw_tags = re.findall(r'<(Bloom|Node)\s+([^>]*)>(.*?)(?=</(?:Bloom|Node)>|</(?:Bloom|Node)>|\Z)', cml_text, re.DOTALL)
-        
-        # Cleaner approach: Find all individual tags using a comprehensive pattern
-        matches = re.finditer(r'<(Bloom|Node)\s+([^>]*)>(.*?)(?:</\1>|\Z)', cml_text, re.DOTALL)
-        
-        # Let's extract every individual tag match securely
-        single_tag_pattern = r'<(Bloom|Node)\s+([^>]*)>(.*?)(?:</\1>)'
-        found_tags = re.findall(single_tag_pattern, cml_text, re.DOTALL)
-        
-        for tag_type, attrs, content in found_tags:
+        for attrs, content in node_matches:
             tone_match = re.search(r'tone=["\'](\d+\.?\d*)["\']', attrs)
             frequency = float(tone_match.group(1)) if tone_match else 528.0
-            
-            # Clean inner text (strip nested tags if any remain)
             clean_content = re.sub(r'<[^>]+>', '', content).strip().replace('\n', ' ')
             
             nodes.append({
                 "data": clean_content[:50] + ("..." if len(clean_content) > 50 else ""),
                 "frequency": frequency,
-                "type": tag_type.lower()
+                "type": "node"
             })
             
+        # 2. Find all <Bloom> elements (extracting text outside of nested nodes if needed)
+        bloom_pattern = r'<Bloom\s+([^>]*)>(.*?)</Bloom>'
+        bloom_matches = re.findall(bloom_pattern, cml_text, re.DOTALL)
+        
+        for attrs, content in bloom_matches:
+            tone_match = re.search(r'tone=["\'](\d+\.?\d*)["\']', attrs)
+            frequency = float(tone_match.group(1)) if tone_match else 528.0
+            
+            # Strip inner nodes out of the bloom text to get the root bloom message
+            root_content = re.sub(r'<Node\b[^>]*>.*?</Node>', '', content, flags=re.DOTALL)
+            clean_content = re.sub(r'<[^>]+>', '', root_content).strip().replace('\n', ' ')
+            
+            if clean_content:
+                nodes.insert(0, {
+                    "data": clean_content[:50] + ("..." if len(clean_content) > 50 else ""),
+                    "frequency": frequency,
+                    "type": "bloom"
+                })
+                
         return nodes
 
     def ingest_cml_document(self, file_path):
