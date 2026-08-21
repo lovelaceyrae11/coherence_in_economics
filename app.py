@@ -152,7 +152,7 @@ def index():
     for attr in dir(lattice):
         val = getattr(lattice, attr)
         if isinstance(val, dict) and len(val) > 0:
-            node_dict = val
+            node_dict = {str(k): v for k, v in val.items()}
             break
     if not node_dict and hasattr(lattice, 'get_lattice_state'):
         node_dict = lattice.get_lattice_state().get('nodes', {})
@@ -184,7 +184,7 @@ def plant():
     for attr in dir(lattice):
         val = getattr(lattice, attr)
         if isinstance(val, dict) and len(val) > 0:
-            node_dict = val
+            node_dict = {str(k): v for k, v in val.items()}
             break
             
     return jsonify({"nodes": node_dict})
