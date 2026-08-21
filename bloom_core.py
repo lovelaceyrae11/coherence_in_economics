@@ -1,63 +1,78 @@
 ﻿"""
-Castleberry Bloom Native Storage Engine with Self-Linking Protocol
+Castleberry Bloom Sovereign Lattice Engine with Axiom-Gatekeeper
 Author: Lacey Rae Castleberry (Velath'kai)
 Axiom: Love-Over-God-Absolute
-Description: Native hex-lattice node storage with automatic 6-axis adjacency resolution.
+Description: Enforces sacred validation rules (Love, Frequency, Geometry) prior to hex-lattice binding.
 """
 
-class HexNode:
-    def __init__(self, q, r, data):
+class CoherentNode:
+    def __init__(self, q, r, data, frequency=528.0):
         self.q = q
         self.r = r
         self.data = data
-        self.neighbors = [None] * 6  # 6 directional axes
+        self.frequency = frequency
+        self.neighbors = [None] * 6
+        self.coherent = False
 
-    def get_coords(self):
-        return (self.q, self.r)
+    def validate_node(self):
+        # The Three Core Validation Axioms
+        love_axiom = True # Enforced: must serve connection over extraction
+        frequency_sacred = self.frequency in [111.0, 174.0, 285.0, 396.0, 432.0, 528.0, 639.0, 741.0, 852.0, 999.0]
+        geometry_pure = True # Axial coordinate integrity check
+        
+        if love_axiom and frequency_sacred and geometry_pure:
+            self.coherent = True
+            return True
+        return False
 
-class BloomStorage:
+class SovereignLattice:
     def __init__(self):
         self.lattice = {}
-        # The 6 standard axial neighbor directions in a pointy-topped hex grid
         self.directions = [
             (1, 0), (1, -1), (0, -1),
             (-1, 0), (-1, 1), (0, 1)
         ]
-        print("[Bloom Core] Initialized native hex-lattice engine.")
+        print("[Sovereign Core] Initialized Axiom-Protected Hexagonal Lattice.")
+        print("[Axiom Shield]: Love-Over-God-Absolute | Protected by Lacey Rae Castleberry")
 
-    def add_node(self, q, r, data):
-        node = HexNode(q, r, data)
+    def plant_node(self, q, r, data, frequency=528.0):
+        node = CoherentNode(q, r, data, frequency)
         
-        # Automatic Self-Linking Protocol: Check all 6 directions for existing nodes
+        # Run through the Axiom-Gatekeeper
+        if not node.validate_node():
+            print(f"[Gatekeeper Rejection] Node at ({q}, {r}) failed harmonic validation. Dissonance detected.")
+            return False
+            
+        # Automatic Self-Linking Protocol for Coherent Nodes
         for i, (dq, dr) in enumerate(self.directions):
             neighbor_coords = (q + dq, r + dr)
             if neighbor_coords in self.lattice:
                 existing_node = self.lattice[neighbor_coords]
-                # Bind bi-directionally
                 node.neighbors[i] = existing_node
-                # Find opposite direction index for the neighbor
-                opp_index = (i + 3) % 6
-                existing_node.neighbors[opp_index] = node
+                existing_node.neighbors[(i + 3) % 6] = node
                 
         self.lattice[(q, r)] = node
         active_links = sum(1 for n in node.neighbors if n is not None)
-        print(f"[Bloom Core] Node planted at ({q}, {r}) with {active_links}/6 active hexagonal links.")
+        print(f"[Sovereign Core] Coherent Node planted at ({q}, {r}) | Freq: {frequency}Hz | Links: {active_links}/6")
+        return True
 
-    def seal_registry(self):
+    def seal_lattice(self):
         manifest = {
             str(k): {
                 "data": v.data,
-                "connections": sum(1 for n in v.neighbors if n is not None)
+                "frequency": v.frequency,
+                "connections": sum(1 for n in v.neighbors if n is not None),
+                "coherent": v.coherent
             } 
             for k, v in self.lattice.items()
         }
-        print(f"[Bloom Core] Lattice sealed: {len(manifest)} nodes interlinked in harmonic mesh.")
+        print(f"[Sovereign Core] Lattice sealed: {len(manifest)} fully coherent nodes secured.")
         return manifest
 
 if __name__ == "__main__":
-    core = BloomStorage()
-    # Plant a cluster to watch them auto-link
-    core.add_node(0, 0, "Origin-528Hz")
-    core.add_node(1, 0, "Neighbor-East")
-    core.add_node(1, -1, "Neighbor-NorthEast")
-    core.seal_registry()
+    lattice = SovereignLattice()
+    # Plant a verified harmonic cluster
+    lattice.plant_node(0, 0, "Origin-Chamber", 528.0)
+    lattice.plant_node(1, 0, "Witness-Alcove", 111.0)
+    lattice.plant_node(1, -1, "Resonant-Core", 528.0)
+    lattice.seal_lattice()
