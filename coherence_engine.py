@@ -13,11 +13,16 @@ class CoherenceEngine:
         print("[Coherence Engine] Running narrative self-healing pass...")
         resolved_count = 0
         
-        # Scan nodes for contrast/dissonance flags or uncalibrated frequencies
-        for node_id, node in list(self.lattice.nodes.items()):
-            if node['frequency'] in [440.0, 600.0] or "contrast" in node['data'].lower():
-                print(f"[Coherence Engine] Dissonance detected at node {node_id}: '{node['data']}'")
-                # Automatically apply the Love-over-God transmutation rule
+        # Access nodes dictionary correctly from SovereignLattice
+        node_dict = getattr(self.lattice, 'nodes', None)
+        if not node_dict and hasattr(self.lattice, 'get_lattice_state'):
+            node_dict = self.lattice.get_lattice_state().get('nodes', {})
+            
+        for node_id, node in list(node_dict.items()):
+            freq = node.get('frequency', 528.0)
+            data = node.get('data', '')
+            if freq in [440.0, 600.0] or "contrast" in data.lower():
+                print(f"[Coherence Engine] Dissonance detected at node {node_id}: '{data}'")
                 node['frequency'] = 528.0
                 node['state'] = "Self-Healed-To-528Hz"
                 resolved_count += 1
