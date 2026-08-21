@@ -48,7 +48,7 @@ def run_live_epoch():
             "node_id": node["id"],
             "host": node["host"],
             "status": ping_res["status"],
-.            "latency": round(latency, 1),
+            "latency": round(latency, 1),
             "coherence": coherence_score,
             "earned": earned
         })
