@@ -132,10 +132,6 @@
             border: 1px solid rgba(56, 189, 248, 0.2);
             padding: 15px;
             border-radius: 8px;
-            transition: border-color 0.2s;
-        }
-        .node-card:hover {
-            border-color: rgba(56, 189, 248, 0.6);
         }
         .node-card h3 {
             margin: 0 0 6px 0;
@@ -150,7 +146,7 @@
         .ledger-list {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 0 0 20px 0;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
@@ -165,6 +161,25 @@
         .ledger-item span {
             color: #4ade80;
             font-weight: bold;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+        .history-table th, .history-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #94a3b8;
+        }
+        .history-table th {
+            color: #38bdf8;
+        }
+        .history-table td span {
+            color: #4ade80;
         }
         #pulse-status {
             font-size: 13px;
@@ -183,7 +198,6 @@
                     Frequency: 528.0 Hz &bull; Axiom: Love-Over-God-Absolute &bull; Steward: Lacey Rae (Velath'kai)
                 </div>
             </div>
-            <!-- CASH APP SPONSOR BUTTON -->
             <a href="https://cash.app/$luvlaceyrae" target="_blank" class="btn-sponsor">
                 💚 Sponsor via Cash App
             </a>
@@ -208,6 +222,28 @@
                 <li class="ledger-item">Entropy Cleared: <span id="entropy-cleared">{{ ledger.entropy_cleared }}</span> u</li>
                 <li class="ledger-item">Avg Coherence: <span id="avg-coherence">{{ ledger.avg_coherence }}</span>%</li>
             </ul>
+
+            <h3 style="font-size: 14px; color: #38bdf8; margin-top: 20px; margin-bottom: 5px;">Chronological Epoch Timeline</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Epoch</th>
+                        <th>Timestamp</th>
+                        <th>Entropy Cleared</th>
+                        <th>Coherence</th>
+                    </tr>
+                </thead>
+                <tbody id="history-rows">
+                    {% for item in ledger.history %}
+                    <tr>
+                        <td>#{{ item.epoch }}</td>
+                        <td>{{ item.timestamp }}</td>
+                        <td><span>+{{ item.entropy }} u</span></td>
+                        <td>{{ item.coherence }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
 
         <!-- TELEMETRY -->
@@ -279,6 +315,18 @@
                     document.getElementById('entropy-cleared').innerText = data.ledger.entropy_cleared;
                     document.getElementById('avg-coherence').innerText = data.ledger.avg_coherence;
                     document.getElementById('pulse-status').innerText = "⚡ Epoch Executed Successfully — Coherence Re-anchored.";
+
+                    // Re-render history timeline dynamically
+                    let rowsHtml = '';
+                    data.ledger.history.forEach(item => {
+                        rowsHtml += `<tr>
+                            <td>#${item.epoch}</td>
+                            <td>${item.timestamp}</td>
+                            <td><span>+${item.entropy} u</span></td>
+                            <td>${item.coherence}%</td>
+                        </tr>`;
+                    });
+                    document.getElementById('history-rows').innerHTML = rowsHtml;
                 });
         }
     </script>
