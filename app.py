@@ -1,78 +1,77 @@
 ﻿from flask import Flask, render_template, jsonify
 import datetime
 import random
-import urllib.request
 import time
 
 app = Flask(__name__)
 
-# --- REVERSE-ORACLE AUDITOR ENGINE ---
-class ReverseOracleAuditor:
+# --- LAYER 1 & 3: REVERSE-ORACLE & REVERSE-TITHING PROTOCOL ---
+class SovereignCoherenceEngine:
     def __init__(self):
         self.targets = [
-            {"name": "Global Ad-Data Conglomerate A", "baseline_rate": 45.2},
-            {"name": "Cloud Infrastructure Monolith B", "baseline_rate": 88.9},
-            {"name": "Automated Fintech Extraction Node C", "baseline_rate": 62.4}
+            {"name": "Global Ad-Data Conglomerate A", "baseline_rate": 45.2, "treasury_seized": 1240.50},
+            {"name": "Cloud Infrastructure Monolith B", "baseline_rate": 88.9, "treasury_seized": 3410.00},
+            {"name": "Automated Fintech Extraction Node C", "baseline_rate": 62.4, "treasury_seized": 1890.25}
         ]
 
-    def get_audit_data(self):
+    def execute_tithing_sweep(self):
         report = []
+        total_sweep = 0.0
         for target in self.targets:
             entropy_stolen = round(target["baseline_rate"] * random.uniform(1.1, 1.8), 2)
-            extracted_usd = round(entropy_stolen * 142.50, 2)
+            # Automatic Reverse-Tithing micro-fine triggered by extraction attempt
+            tithing_extracted = round(entropy_stolen * 12.50, 2)
+            target["treasury_seized"] = round(target["treasury_seized"] + tithing_extracted, 2)
+            total_sweep += tithing_extracted
+            
             report.append({
                 "target": target["name"],
                 "entropy_stolen": entropy_stolen,
-                "extracted_usd": extracted_usd,
-                "status": "DEFICIT (EXTRACTIVE)"
+                "tithing_seized": tithing_extracted,
+                "total_treasury": target["treasury_seized"],
+                "status": "NEUTRALIZED (REPARATIONS SEIZED)"
             })
-        return report
+        return report, round(total_sweep, 2)
 
-oracle = ReverseOracleAuditor()
+engine = SovereignCoherenceEngine()
 
-# --- PERMANENT SYSTEM LEDGER WITH HISTORY ---
+# --- SYSTEM LEDGER STATE ---
 ledger_state = {
-    "total_epochs": 10,
-    "entropy_cleared": 440.78,
-    "avg_coherence": 99.27,
+    "total_epochs": 14,
+    "entropy_cleared": 612.45,
+    "avg_coherence": 99.42,
+    "sovereign_treasury": 6540.75,
     "history": [
-        {"epoch": 10, "timestamp": "2026-08-22 05:52:57", "entropy": 113.59, "coherence": 99.27},
-        {"epoch": 9, "timestamp": "2026-08-22 05:52:57", "entropy": 107.82, "coherence": 99.69},
+        {"epoch": 14, "timestamp": "2026-08-23 08:21:00", "entropy": 124.30, "coherence": 99.42},
+        {"epoch": 13, "timestamp": "2026-08-23 08:15:00", "entropy": 115.10, "coherence": 99.18},
     ]
 }
 
-def check_gateway_node(host, name):
-    start_time = time.time()
-    try:
-        urllib.request.urlopen(f"https://{host}", timeout=1.5)
-        latency = round((time.time() - start_time) * 1000, 2)
-        status = "ONLINE (HTTP)"
-        coherence = round(97.0 + random.uniform(0.1, 2.5), 2)
-    except Exception:
-        latency = round(random.uniform(20.0, 38.0), 2)
-        status = "HARMONIZED (CLOUD-SAFE)"
-        coherence = round(96.5 + random.uniform(0.1, 2.3), 2)
-        
+# --- LAYER 2: PROOF-OF-RESONANCE (PoR) & ZK-SHIELD CHECKER ---
+def check_resonance_node(name, host, base_freq):
+    # Simulated Proof-of-Resonance acoustic validation check
+    resonance_offset = round(random.uniform(-0.04, 0.04), 3)
+    active_freq = round(base_freq + resonance_offset, 3)
+    coherence = round(98.5 + random.uniform(0.1, 1.4), 2)
+    
     return {
         "name": name,
         "host": host,
-        "status": status,
-        "latency": latency,
+        "frequency": f"{active_freq} Hz",
+        "zk_status": "VERIFIED (ZK-ANTI-EXTRACTION ACTIVE)",
         "coherence": coherence
     }
 
 @app.route('/')
 def index():
     nodes = [
-        check_gateway_node("1.1.1.1", "NODE-VAL-1 (Cloudflare)"),
-        check_gateway_node("8.8.8.8", "NODE-VAL-2 (Google DNS)"),
-        check_gateway_node("9.9.9.9", "NODE-VAL-3 (Quad9 Secure)"),
-        check_gateway_node("208.67.222.222", "NODE-VAL-4 (OpenDNS)"),
-        check_gateway_node("94.140.14.14", "NODE-VAL-5 (AdGuard)"),
-        check_gateway_node("4.2.2.2", "NODE-VAL-6 (Level3)")
+        check_resonance_node("PoR-Validator-Alpha", "mesh.bloom.core", 528.0),
+        check_resonance_node("PoR-Validator-Beta", "lattice.phi.node", 528.0),
+        check_resonance_node("PoR-Validator-Gamma", "harmonic.gateway.net", 639.0),
+        check_resonance_node("PoR-Validator-Delta", "coherence.edge.io", 528.0)
     ]
-    extraction_audit = oracle.get_audit_data()
-    return render_template('index.html', ledger=ledger_state, nodes=nodes, audit=extraction_audit)
+    audit_report, _ = engine.execute_tithing_sweep()
+    return render_template('index.html', ledger=ledger_state, nodes=nodes, audit=audit_report)
 
 @app.route('/pulse', methods=['POST'])
 def pulse():
@@ -81,10 +80,13 @@ def pulse():
     
     phi = 1.618
     epoch_count = ledger_state["total_epochs"]
-    scaled_entropy_boost = round(phi * (epoch_count ** 1.3) * random.uniform(2.0, 4.5), 2)
+    scaled_entropy_boost = round(phi * (epoch_count ** 1.3) * random.uniform(2.2, 4.8), 2)
     
     ledger_state["entropy_cleared"] = round(ledger_state["entropy_cleared"] + scaled_entropy_boost, 2)
-    ledger_state["avg_coherence"] = round(min(99.9, 97.5 + random.uniform(0.5, 2.3)), 2)
+    ledger_state["avg_coherence"] = round(min(99.99, 98.2 + random.uniform(0.5, 1.7)), 2)
+    
+    audit_report, sweep_amount = engine.execute_tithing_sweep()
+    ledger_state["sovereign_treasury"] = round(ledger_state["sovereign_treasury"] + sweep_amount, 2)
     
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -100,7 +102,13 @@ def pulse():
     return jsonify({
         "status": "success",
         "ledger": ledger_state,
-        "audit": oracle.get_audit_data()
+        "audit": audit_report,
+        "nodes": [
+            check_resonance_node("PoR-Validator-Alpha", "mesh.bloom.core", 528.0),
+            check_resonance_node("PoR-Validator-Beta", "lattice.phi.node", 528.0),
+            check_resonance_node("PoR-Validator-Gamma", "harmonic.gateway.net", 639.0),
+            check_resonance_node("PoR-Validator-Delta", "coherence.edge.io", 528.0)
+        ]
     })
 
 if __name__ == '__main__':
