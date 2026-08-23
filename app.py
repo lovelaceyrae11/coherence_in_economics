@@ -1,9 +1,8 @@
 ﻿import os
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 import random
-import time
 
 app = Flask(__name__)
 
@@ -36,7 +35,14 @@ class AuditTarget(db.Model):
     baseline_rate = db.Column(db.Float)
     treasury_seized = db.Column(db.Float)
 
-# Initialize database tables and default state
+class ActiveNode(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    node_id = db.Column(db.String(100), unique=True)
+    frequency = db.Column(db.Float)
+    status = db.Column(db.String(50))
+    coherence = db.Column(db.Float)
+
+# Initialize database
 with app.app_context():
     db.create_all()
     if not SystemState.query.first():
@@ -49,7 +55,6 @@ with app.app_context():
         for t in default_targets:
             db.session.add(AuditTarget(name=t["name"], baseline_rate=t["baseline_rate"], treasury_seized=t["treasury_seized"]))
         db.session.add(EpochLog(epoch=14, timestamp="2026-08-23 08:21:00", entropy=124.30, coherence=99.42))
-        db.session.add(EpochLog(epoch=13, timestamp="2026-08-23 08:15:00", entropy=115.10, coherence=99.18))
         db.session.commit()
 
 def execute_tithing_sweep():
@@ -72,28 +77,9 @@ def execute_tithing_sweep():
     db.session.commit()
     return report, round(total_sweep, 2)
 
-def check_resonance_node(name, host, base_freq):
-    resonance_offset = round(random.uniform(-0.04, 0.04), 3)
-    active_freq = round(base_freq + resonance_offset, 3)
-    coherence = round(98.5 + random.uniform(0.1, 1.4), 2)
-    
-    return {
-        "name": name,
-        "host": host,
-        "frequency": f"{active_freq} Hz",
-        "zk_status": "VERIFIED (ZK-ANTI-EXTRACTION ACTIVE)",
-        "coherence": coherence
-    }
-
 @app.route('/')
 def index():
     state = SystemState.query.first()
-    nodes = [
-        check_resonance_node("PoR-Validator-Alpha", "mesh.bloom.core", 528.0),
-        check_resonance_node("PoR-Validator-Beta", "lattice.phi.node", 528.0),
-        check_resonance_node("PoR-Validator-Gamma", "harmonic.gateway.net", 639.0),
-        check_resonance_node("PoR-Validator-Delta", "coherence.edge.io", 528.0)
-    ]
     audit_report, _ = execute_tithing_sweep()
     history = EpochLog.query.order_by(EpochLog.epoch.desc()).limit(6).all()
     
@@ -104,7 +90,29 @@ def index():
         "sovereign_treasury": state.sovereign_treasury,
         "history": [{"epoch": h.epoch, "timestamp": h.timestamp, "entropy": h.entropy, "coherence": h.coherence} for h in history]
     }
-    return render_template('index.html', ledger=ledger_data, nodes=nodes, audit=audit_report)
+    
+    nodes = ActiveNode.query.all()
+    node_list = [{"name": n.node_id, "frequency": f"{n.frequency} Hz", "status": n.status, "coherence": n.coherence} for n in nodes]
+    if not node_list:
+        node_list = [{"name": "PoR-Validator-Alpha (Primary Mesh)", "frequency": "528.0 Hz", "status": "VERIFIED (READY)", "coherence": 99.42}]
+        
+    return render_template('index.html', ledger=ledger_data, nodes=node_list, audit=audit_report)
+
+@app.route('/register_node', methods=['POST'])
+def register_node():
+    data = request.json
+    node_name = data.get('node_id', 'Sovereign-Node')
+    freq = data.get('frequency', 528.0)
+    
+    existing = ActiveNode.query.filter_by(node_id=node_name).first()
+    if existing:
+        existing.status = "ONLINE (PING ACTIVE)"
+        existing.coherence = round(99.2 + random.uniform(0.1, 0.7), 2)
+    else:
+        new_node = ActiveNode(node_id=node_name, frequency=freq, status="ONLINE (PING ACTIVE)", coherence=99.45)
+        db.session.add(new_node)
+    db.session.commit()
+    return jsonify({"status": "success", "message": "Node registered and synchronized."})
 
 @app.route('/pulse', methods=['POST'])
 def pulse():
@@ -120,19 +128,11 @@ def pulse():
     state.sovereign_treasury = round(state.sovereign_treasury + sweep_amount, 2)
     
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
     new_log = EpochLog(epoch=state.total_epochs, timestamp=current_time, entropy=scaled_entropy_boost, coherence=state.avg_coherence)
     db.session.add(new_log)
     db.session.commit()
     
-    # Keep only the latest 6 logs in database
-    all_logs = EpochLog.query.order_by(EpochLog.epoch.desc()).all()
-    if len(all_logs) > 6:
-        for old_log in all_logs[6:]:
-            db.session.delete(old_log)
-        db.session.commit()
-        
-    history = EpochLog.query.order_by(EpochLog.epoch.desc()).all()
+    history = EpochLog.query.order_by(EpochLog.epoch.desc()).limit(6).all()
     ledger_data = {
         "total_epochs": state.total_epochs,
         "entropy_cleared": state.entropy_cleared,
@@ -141,16 +141,14 @@ def pulse():
         "history": [{"epoch": h.epoch, "timestamp": h.timestamp, "entropy": h.entropy, "coherence": h.coherence} for h in history]
     }
     
+    nodes = ActiveNode.query.all()
+    node_list = [{"name": n.node_id, "frequency": f"{n.frequency} Hz", "status": n.status, "coherence": n.coherence} for n in nodes]
+    
     return jsonify({
         "status": "success",
         "ledger": ledger_data,
         "audit": audit_report,
-        "nodes": [
-            check_resonance_node("PoR-Validator-Alpha", "mesh.bloom.core", 528.0),
-            check_resonance_node("PoR-Validator-Beta", "lattice.phi.node", 528.0),
-            check_resonance_node("PoR-Validator-Gamma", "harmonic.gateway.net", 639.0),
-            check_resonance_node("PoR-Validator-Delta", "coherence.edge.io", 528.0)
-        ]
+        "nodes": node_list
     })
 
 if __name__ == '__main__':
