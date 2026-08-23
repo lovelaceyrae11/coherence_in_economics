@@ -6,14 +6,38 @@ import time
 
 app = Flask(__name__)
 
+# --- REVERSE-ORACLE AUDITOR ENGINE ---
+class ReverseOracleAuditor:
+    def __init__(self):
+        self.targets = [
+            {"name": "Global Ad-Data Conglomerate A", "baseline_rate": 45.2},
+            {"name": "Cloud Infrastructure Monolith B", "baseline_rate": 88.9},
+            {"name": "Automated Fintech Extraction Node C", "baseline_rate": 62.4}
+        ]
+
+    def get_audit_data(self):
+        report = []
+        for target in self.targets:
+            entropy_stolen = round(target["baseline_rate"] * random.uniform(1.1, 1.8), 2)
+            extracted_usd = round(entropy_stolen * 142.50, 2)
+            report.append({
+                "target": target["name"],
+                "entropy_stolen": entropy_stolen,
+                "extracted_usd": extracted_usd,
+                "status": "DEFICIT (EXTRACTIVE)"
+            })
+        return report
+
+oracle = ReverseOracleAuditor()
+
 # --- PERMANENT SYSTEM LEDGER WITH HISTORY ---
 ledger_state = {
-    "total_epochs": 5,
-    "entropy_cleared": 42.50,
-    "avg_coherence": 97.2,
+    "total_epochs": 10,
+    "entropy_cleared": 440.78,
+    "avg_coherence": 99.27,
     "history": [
-        {"epoch": 5, "timestamp": "2026-08-21 14:21:28", "entropy": 8.50, "coherence": 97.2},
-        {"epoch": 4, "timestamp": "2026-08-21 12:10:04", "entropy": 7.20, "coherence": 96.8},
+        {"epoch": 10, "timestamp": "2026-08-22 05:52:57", "entropy": 113.59, "coherence": 99.27},
+        {"epoch": 9, "timestamp": "2026-08-22 05:52:57", "entropy": 107.82, "coherence": 99.69},
     ]
 }
 
@@ -47,17 +71,16 @@ def index():
         check_gateway_node("94.140.14.14", "NODE-VAL-5 (AdGuard)"),
         check_gateway_node("4.2.2.2", "NODE-VAL-6 (Level3)")
     ]
-    return render_template('index.html', ledger=ledger_state, nodes=nodes)
+    extraction_audit = oracle.get_audit_data()
+    return render_template('index.html', ledger=ledger_state, nodes=nodes, audit=extraction_audit)
 
 @app.route('/pulse', methods=['POST'])
 def pulse():
     global ledger_state
     ledger_state["total_epochs"] += 1
     
-    # --- MASSIVE SCALING FORMULA (Golden Ratio 1.618 x Exponential Growth) ---
     phi = 1.618
     epoch_count = ledger_state["total_epochs"]
-    # Scales up substantially with every epoch pulse
     scaled_entropy_boost = round(phi * (epoch_count ** 1.3) * random.uniform(2.0, 4.5), 2)
     
     ledger_state["entropy_cleared"] = round(ledger_state["entropy_cleared"] + scaled_entropy_boost, 2)
@@ -65,7 +88,6 @@ def pulse():
     
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Prepend new epoch to history log
     new_log = {
         "epoch": epoch_count,
         "timestamp": current_time,
@@ -73,14 +95,12 @@ def pulse():
         "coherence": ledger_state["avg_coherence"]
     }
     ledger_state["history"].insert(0, new_log)
-    
-    # Keep only the last 6 records for a clean timeline
     ledger_state["history"] = ledger_state["history"][:6]
-    ledger_state["last_epoch"] = current_time
     
     return jsonify({
         "status": "success",
-        "ledger": ledger_state
+        "ledger": ledger_state,
+        "audit": oracle.get_audit_data()
     })
 
 if __name__ == '__main__':

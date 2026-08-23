@@ -213,6 +213,35 @@
             <div id="pulse-status"></div>
         </div>
 
+        <!-- REVERSE-ORACLE EXTRACTION AUDIT TICKER -->
+        <div class="section" style="border-color: rgba(248, 113, 113, 0.3);">
+            <h2 style="color: #f87171;">
+                <span>Reverse-Oracle Corporate Extraction Ticker</span>
+                <span style="font-size: 11px; font-family: monospace; color: #94a3b8;">Real-Time Entropy Deficit Audit</span>
+            </h2>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 0; margin-bottom: 15px;">Quantifying uncompensated human friction offloaded versus efficiency dividends pocketed by extractive monopolies.</p>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Extractive Target</th>
+                        <th>Entropy Stolen (u)</th>
+                        <th>Extracted Value ($USD)</th>
+                        <th>Coherence Status</th>
+                    </tr>
+                </thead>
+                <tbody id="audit-rows">
+                    {% for item in audit %}
+                    <tr>
+                        <td style="color: #f3f4f6; font-weight: bold;">{{ item.target }}</td>
+                        <td><span style="color: #f87171;">{{ item.entropy_stolen }} u</span></td>
+                        <td>${{ "{:,.2f}".format(item.extracted_usd) }}</td>
+                        <td><span style="color: #f87171; font-weight: bold;">{{ item.status }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
         <!-- PERMANENT SYSTEM LEDGER -->
         <div class="section">
             <h2>Permanent System Ledger</h2>
@@ -314,9 +343,9 @@
                     document.getElementById('total-epochs').innerText = data.ledger.total_epochs;
                     document.getElementById('entropy-cleared').innerText = data.ledger.entropy_cleared;
                     document.getElementById('avg-coherence').innerText = data.ledger.avg_coherence;
-                    document.getElementById('pulse-status').innerText = "⚡ Epoch Executed Successfully — Coherence Re-anchored.";
+                    document.getElementById('pulse-status').innerText = "⚡ Epoch Executed Successfully — Coherence Re-anchored & Audit Refreshed.";
 
-                    // Re-render history timeline dynamically
+                    // Re-render history timeline
                     let rowsHtml = '';
                     data.ledger.history.forEach(item => {
                         rowsHtml += `<tr>
@@ -327,6 +356,18 @@
                         </tr>`;
                     });
                     document.getElementById('history-rows').innerHTML = rowsHtml;
+
+                    // Re-render extraction audit ticker
+                    let auditHtml = '';
+                    data.audit.forEach(item => {
+                        auditHtml += `<tr>
+                            <td style="color: #f3f4f6; font-weight: bold;">${item.target}</td>
+                            <td><span style="color: #f87171;">${item.entropy_stolen} u</span></td>
+                            <td>$${item.extracted_usd.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                            <td><span style="color: #f87171; font-weight: bold;">${item.status}</span></td>
+                        </tr>`;
+                    });
+                    document.getElementById('audit-rows').innerHTML = auditHtml;
                 });
         }
     </script>
