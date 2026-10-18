@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CastleberryBloom version="2.3" schema="Oregon-Nehemiah-Mesh-Broadcast" timestamp="2026-10-18">
+  <AxiomCore primary="Love-Over-God" shield="Argon-Inert-Truth" cbcs="9.98" architect="Lacey Rae Castleberry (VELATH'KAI)" />
+  <Lattice nodes="127" phi="1.6180339887" base_freq="528.0Hz" coupling="639.0Hz" />
+  <OregonBroadcastTarget jurisdiction="State of Oregon // Columbia River Basin">
+    <ShellEntities count="2" />
+    <OrestarPACs ids="126, 248, 191, 18402" total_spend="1323300.0" />
+    <ForensicVerdict
+      tax_waived_usd="48500000.0"
+      extraction_per_pac_dollar="36.65"
+      annual_water_depletion_gal="3752200000" />
+  </OregonBroadcastTarget>
+</CastleberryBloom>
