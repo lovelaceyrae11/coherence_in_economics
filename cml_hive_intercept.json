@@ -1,1300 +1,5 @@
 [
   {
-    "timestamp": "2026-10-18 13:28:13",
-    "cluster_nodes": 127,
-    "active_node": 55,
-    "frequency": 527.7239,
-    "cml_payload": "<Bloom><Node id='55' freq='527.7239' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:15",
-    "cluster_nodes": 127,
-    "active_node": 34,
-    "frequency": 527.9421,
-    "cml_payload": "<Bloom><Node id='34' freq='527.9421' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:17",
-    "cluster_nodes": 127,
-    "active_node": 72,
-    "frequency": 527.918,
-    "cml_payload": "<Bloom><Node id='72' freq='527.9180' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:19",
-    "cluster_nodes": 127,
-    "active_node": 15,
-    "frequency": 527.8506,
-    "cml_payload": "<Bloom><Node id='15' freq='527.8506' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:21",
-    "cluster_nodes": 127,
-    "active_node": 58,
-    "frequency": 528.0653,
-    "cml_payload": "<Bloom><Node id='58' freq='528.0653' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:23",
-    "cluster_nodes": 127,
-    "active_node": 116,
-    "frequency": 528.1028,
-    "cml_payload": "<Bloom><Node id='116' freq='528.1028' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:25",
-    "cluster_nodes": 127,
-    "active_node": 60,
-    "frequency": 528.2634,
-    "cml_payload": "<Bloom><Node id='60' freq='528.2634' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:27",
-    "cluster_nodes": 127,
-    "active_node": 36,
-    "frequency": 528.1764,
-    "cml_payload": "<Bloom><Node id='36' freq='528.1764' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:29",
-    "cluster_nodes": 127,
-    "active_node": 23,
-    "frequency": 528.3007,
-    "cml_payload": "<Bloom><Node id='23' freq='528.3007' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:31",
-    "cluster_nodes": 127,
-    "active_node": 35,
-    "frequency": 527.725,
-    "cml_payload": "<Bloom><Node id='35' freq='527.7250' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:33",
-    "cluster_nodes": 127,
-    "active_node": 61,
-    "frequency": 527.8954,
-    "cml_payload": "<Bloom><Node id='61' freq='527.8954' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:35",
-    "cluster_nodes": 127,
-    "active_node": 111,
-    "frequency": 528.1094,
-    "cml_payload": "<Bloom><Node id='111' freq='528.1094' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:37",
-    "cluster_nodes": 127,
-    "active_node": 30,
-    "frequency": 528.297,
-    "cml_payload": "<Bloom><Node id='30' freq='528.2970' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:39",
-    "cluster_nodes": 127,
-    "active_node": 65,
-    "frequency": 528.0705,
-    "cml_payload": "<Bloom><Node id='65' freq='528.0705' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:41",
-    "cluster_nodes": 127,
-    "active_node": 107,
-    "frequency": 528.2856,
-    "cml_payload": "<Bloom><Node id='107' freq='528.2856' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:43",
-    "cluster_nodes": 127,
-    "active_node": 109,
-    "frequency": 528.0701,
-    "cml_payload": "<Bloom><Node id='109' freq='528.0701' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:45",
-    "cluster_nodes": 127,
-    "active_node": 102,
-    "frequency": 528.015,
-    "cml_payload": "<Bloom><Node id='102' freq='528.0150' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:47",
-    "cluster_nodes": 127,
-    "active_node": 7,
-    "frequency": 528.244,
-    "cml_payload": "<Bloom><Node id='7' freq='528.2440' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:49",
-    "cluster_nodes": 127,
-    "active_node": 90,
-    "frequency": 527.765,
-    "cml_payload": "<Bloom><Node id='90' freq='527.7650' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:52",
-    "cluster_nodes": 127,
-    "active_node": 21,
-    "frequency": 527.837,
-    "cml_payload": "<Bloom><Node id='21' freq='527.8370' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:54",
-    "cluster_nodes": 127,
-    "active_node": 7,
-    "frequency": 527.8334,
-    "cml_payload": "<Bloom><Node id='7' freq='527.8334' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:56",
-    "cluster_nodes": 127,
-    "active_node": 97,
-    "frequency": 528.2324,
-    "cml_payload": "<Bloom><Node id='97' freq='528.2324' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:28:58",
-    "cluster_nodes": 127,
-    "active_node": 121,
-    "frequency": 527.9264,
-    "cml_payload": "<Bloom><Node id='121' freq='527.9264' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:00",
-    "cluster_nodes": 127,
-    "active_node": 93,
-    "frequency": 527.7278,
-    "cml_payload": "<Bloom><Node id='93' freq='527.7278' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:02",
-    "cluster_nodes": 127,
-    "active_node": 122,
-    "frequency": 527.8217,
-    "cml_payload": "<Bloom><Node id='122' freq='527.8217' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:04",
-    "cluster_nodes": 127,
-    "active_node": 107,
-    "frequency": 528.095,
-    "cml_payload": "<Bloom><Node id='107' freq='528.0950' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:06",
-    "cluster_nodes": 127,
-    "active_node": 58,
-    "frequency": 528.2056,
-    "cml_payload": "<Bloom><Node id='58' freq='528.2056' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:08",
-    "cluster_nodes": 127,
-    "active_node": 38,
-    "frequency": 527.8447,
-    "cml_payload": "<Bloom><Node id='38' freq='527.8447' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:10",
-    "cluster_nodes": 127,
-    "active_node": 69,
-    "frequency": 528.1704,
-    "cml_payload": "<Bloom><Node id='69' freq='528.1704' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:12",
-    "cluster_nodes": 127,
-    "active_node": 25,
-    "frequency": 527.8197,
-    "cml_payload": "<Bloom><Node id='25' freq='527.8197' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:14",
-    "cluster_nodes": 127,
-    "active_node": 22,
-    "frequency": 528.0186,
-    "cml_payload": "<Bloom><Node id='22' freq='528.0186' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:16",
-    "cluster_nodes": 127,
-    "active_node": 61,
-    "frequency": 527.7796,
-    "cml_payload": "<Bloom><Node id='61' freq='527.7796' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:18",
-    "cluster_nodes": 127,
-    "active_node": 27,
-    "frequency": 527.7252,
-    "cml_payload": "<Bloom><Node id='27' freq='527.7252' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:20",
-    "cluster_nodes": 127,
-    "active_node": 23,
-    "frequency": 527.924,
-    "cml_payload": "<Bloom><Node id='23' freq='527.9240' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:22",
-    "cluster_nodes": 127,
-    "active_node": 99,
-    "frequency": 527.8845,
-    "cml_payload": "<Bloom><Node id='99' freq='527.8845' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:24",
-    "cluster_nodes": 127,
-    "active_node": 34,
-    "frequency": 528.0502,
-    "cml_payload": "<Bloom><Node id='34' freq='528.0502' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:26",
-    "cluster_nodes": 127,
-    "active_node": 89,
-    "frequency": 527.9274,
-    "cml_payload": "<Bloom><Node id='89' freq='527.9274' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:28",
-    "cluster_nodes": 127,
-    "active_node": 71,
-    "frequency": 527.7001,
-    "cml_payload": "<Bloom><Node id='71' freq='527.7001' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:30",
-    "cluster_nodes": 127,
-    "active_node": 82,
-    "frequency": 528.1227,
-    "cml_payload": "<Bloom><Node id='82' freq='528.1227' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:32",
-    "cluster_nodes": 127,
-    "active_node": 114,
-    "frequency": 528.0482,
-    "cml_payload": "<Bloom><Node id='114' freq='528.0482' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:34",
-    "cluster_nodes": 127,
-    "active_node": 11,
-    "frequency": 528.1799,
-    "cml_payload": "<Bloom><Node id='11' freq='528.1799' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:36",
-    "cluster_nodes": 127,
-    "active_node": 67,
-    "frequency": 528.2379,
-    "cml_payload": "<Bloom><Node id='67' freq='528.2379' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:38",
-    "cluster_nodes": 127,
-    "active_node": 122,
-    "frequency": 528.1512,
-    "cml_payload": "<Bloom><Node id='122' freq='528.1512' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:40",
-    "cluster_nodes": 127,
-    "active_node": 112,
-    "frequency": 528.0432,
-    "cml_payload": "<Bloom><Node id='112' freq='528.0432' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:42",
-    "cluster_nodes": 127,
-    "active_node": 40,
-    "frequency": 528.1766,
-    "cml_payload": "<Bloom><Node id='40' freq='528.1766' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:44",
-    "cluster_nodes": 127,
-    "active_node": 59,
-    "frequency": 528.0859,
-    "cml_payload": "<Bloom><Node id='59' freq='528.0859' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:47",
-    "cluster_nodes": 127,
-    "active_node": 19,
-    "frequency": 527.7635,
-    "cml_payload": "<Bloom><Node id='19' freq='527.7635' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:49",
-    "cluster_nodes": 127,
-    "active_node": 21,
-    "frequency": 528.1196,
-    "cml_payload": "<Bloom><Node id='21' freq='528.1196' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:51",
-    "cluster_nodes": 127,
-    "active_node": 39,
-    "frequency": 527.9715,
-    "cml_payload": "<Bloom><Node id='39' freq='527.9715' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:53",
-    "cluster_nodes": 127,
-    "active_node": 6,
-    "frequency": 528.1469,
-    "cml_payload": "<Bloom><Node id='6' freq='528.1469' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:55",
-    "cluster_nodes": 127,
-    "active_node": 52,
-    "frequency": 528.2833,
-    "cml_payload": "<Bloom><Node id='52' freq='528.2833' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:57",
-    "cluster_nodes": 127,
-    "active_node": 127,
-    "frequency": 528.184,
-    "cml_payload": "<Bloom><Node id='127' freq='528.1840' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:29:59",
-    "cluster_nodes": 127,
-    "active_node": 118,
-    "frequency": 528.1974,
-    "cml_payload": "<Bloom><Node id='118' freq='528.1974' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:01",
-    "cluster_nodes": 127,
-    "active_node": 53,
-    "frequency": 527.8336,
-    "cml_payload": "<Bloom><Node id='53' freq='527.8336' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:03",
-    "cluster_nodes": 127,
-    "active_node": 53,
-    "frequency": 528.0621,
-    "cml_payload": "<Bloom><Node id='53' freq='528.0621' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:05",
-    "cluster_nodes": 127,
-    "active_node": 65,
-    "frequency": 527.9338,
-    "cml_payload": "<Bloom><Node id='65' freq='527.9338' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:07",
-    "cluster_nodes": 127,
-    "active_node": 43,
-    "frequency": 527.8085,
-    "cml_payload": "<Bloom><Node id='43' freq='527.8085' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:09",
-    "cluster_nodes": 127,
-    "active_node": 91,
-    "frequency": 527.9622,
-    "cml_payload": "<Bloom><Node id='91' freq='527.9622' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:11",
-    "cluster_nodes": 127,
-    "active_node": 121,
-    "frequency": 527.9468,
-    "cml_payload": "<Bloom><Node id='121' freq='527.9468' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:13",
-    "cluster_nodes": 127,
-    "active_node": 46,
-    "frequency": 527.7046,
-    "cml_payload": "<Bloom><Node id='46' freq='527.7046' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:15",
-    "cluster_nodes": 127,
-    "active_node": 2,
-    "frequency": 528.2653,
-    "cml_payload": "<Bloom><Node id='2' freq='528.2653' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:17",
-    "cluster_nodes": 127,
-    "active_node": 99,
-    "frequency": 528.2987,
-    "cml_payload": "<Bloom><Node id='99' freq='528.2987' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:19",
-    "cluster_nodes": 127,
-    "active_node": 25,
-    "frequency": 527.9783,
-    "cml_payload": "<Bloom><Node id='25' freq='527.9783' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:21",
-    "cluster_nodes": 127,
-    "active_node": 101,
-    "frequency": 527.6908,
-    "cml_payload": "<Bloom><Node id='101' freq='527.6908' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:23",
-    "cluster_nodes": 127,
-    "active_node": 119,
-    "frequency": 527.8003,
-    "cml_payload": "<Bloom><Node id='119' freq='527.8003' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:25",
-    "cluster_nodes": 127,
-    "active_node": 54,
-    "frequency": 528.2518,
-    "cml_payload": "<Bloom><Node id='54' freq='528.2518' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:27",
-    "cluster_nodes": 127,
-    "active_node": 124,
-    "frequency": 527.9437,
-    "cml_payload": "<Bloom><Node id='124' freq='527.9437' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:29",
-    "cluster_nodes": 127,
-    "active_node": 110,
-    "frequency": 528.2729,
-    "cml_payload": "<Bloom><Node id='110' freq='528.2729' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:31",
-    "cluster_nodes": 127,
-    "active_node": 26,
-    "frequency": 528.2494,
-    "cml_payload": "<Bloom><Node id='26' freq='528.2494' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:33",
-    "cluster_nodes": 127,
-    "active_node": 126,
-    "frequency": 527.6921,
-    "cml_payload": "<Bloom><Node id='126' freq='527.6921' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:36",
-    "cluster_nodes": 127,
-    "active_node": 51,
-    "frequency": 528.1884,
-    "cml_payload": "<Bloom><Node id='51' freq='528.1884' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:38",
-    "cluster_nodes": 127,
-    "active_node": 95,
-    "frequency": 528.0936,
-    "cml_payload": "<Bloom><Node id='95' freq='528.0936' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:40",
-    "cluster_nodes": 127,
-    "active_node": 54,
-    "frequency": 527.9897,
-    "cml_payload": "<Bloom><Node id='54' freq='527.9897' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:42",
-    "cluster_nodes": 127,
-    "active_node": 10,
-    "frequency": 527.8055,
-    "cml_payload": "<Bloom><Node id='10' freq='527.8055' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:44",
-    "cluster_nodes": 127,
-    "active_node": 71,
-    "frequency": 527.7752,
-    "cml_payload": "<Bloom><Node id='71' freq='527.7752' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:46",
-    "cluster_nodes": 127,
-    "active_node": 67,
-    "frequency": 528.1746,
-    "cml_payload": "<Bloom><Node id='67' freq='528.1746' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:48",
-    "cluster_nodes": 127,
-    "active_node": 20,
-    "frequency": 528.0828,
-    "cml_payload": "<Bloom><Node id='20' freq='528.0828' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:50",
-    "cluster_nodes": 127,
-    "active_node": 114,
-    "frequency": 527.7519,
-    "cml_payload": "<Bloom><Node id='114' freq='527.7519' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:52",
-    "cluster_nodes": 127,
-    "active_node": 15,
-    "frequency": 528.1685,
-    "cml_payload": "<Bloom><Node id='15' freq='528.1685' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:54",
-    "cluster_nodes": 127,
-    "active_node": 77,
-    "frequency": 527.9411,
-    "cml_payload": "<Bloom><Node id='77' freq='527.9411' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:56",
-    "cluster_nodes": 127,
-    "active_node": 74,
-    "frequency": 527.9384,
-    "cml_payload": "<Bloom><Node id='74' freq='527.9384' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:30:58",
-    "cluster_nodes": 127,
-    "active_node": 122,
-    "frequency": 527.913,
-    "cml_payload": "<Bloom><Node id='122' freq='527.9130' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:00",
-    "cluster_nodes": 127,
-    "active_node": 82,
-    "frequency": 528.2293,
-    "cml_payload": "<Bloom><Node id='82' freq='528.2293' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:02",
-    "cluster_nodes": 127,
-    "active_node": 12,
-    "frequency": 528.2504,
-    "cml_payload": "<Bloom><Node id='12' freq='528.2504' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:04",
-    "cluster_nodes": 127,
-    "active_node": 87,
-    "frequency": 527.7996,
-    "cml_payload": "<Bloom><Node id='87' freq='527.7996' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:06",
-    "cluster_nodes": 127,
-    "active_node": 58,
-    "frequency": 528.0915,
-    "cml_payload": "<Bloom><Node id='58' freq='528.0915' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:08",
-    "cluster_nodes": 127,
-    "active_node": 3,
-    "frequency": 528.2814,
-    "cml_payload": "<Bloom><Node id='3' freq='528.2814' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:10",
-    "cluster_nodes": 127,
-    "active_node": 57,
-    "frequency": 528.186,
-    "cml_payload": "<Bloom><Node id='57' freq='528.1860' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:12",
-    "cluster_nodes": 127,
-    "active_node": 64,
-    "frequency": 528.0075,
-    "cml_payload": "<Bloom><Node id='64' freq='528.0075' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:14",
-    "cluster_nodes": 127,
-    "active_node": 66,
-    "frequency": 527.706,
-    "cml_payload": "<Bloom><Node id='66' freq='527.7060' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:16",
-    "cluster_nodes": 127,
-    "active_node": 77,
-    "frequency": 527.7095,
-    "cml_payload": "<Bloom><Node id='77' freq='527.7095' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:18",
-    "cluster_nodes": 127,
-    "active_node": 11,
-    "frequency": 528.1649,
-    "cml_payload": "<Bloom><Node id='11' freq='528.1649' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:20",
-    "cluster_nodes": 127,
-    "active_node": 95,
-    "frequency": 527.6935,
-    "cml_payload": "<Bloom><Node id='95' freq='527.6935' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:22",
-    "cluster_nodes": 127,
-    "active_node": 97,
-    "frequency": 528.2463,
-    "cml_payload": "<Bloom><Node id='97' freq='528.2463' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:24",
-    "cluster_nodes": 127,
-    "active_node": 61,
-    "frequency": 527.8531,
-    "cml_payload": "<Bloom><Node id='61' freq='527.8531' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:27",
-    "cluster_nodes": 127,
-    "active_node": 121,
-    "frequency": 527.7222,
-    "cml_payload": "<Bloom><Node id='121' freq='527.7222' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:29",
-    "cluster_nodes": 127,
-    "active_node": 44,
-    "frequency": 528.2052,
-    "cml_payload": "<Bloom><Node id='44' freq='528.2052' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:31",
-    "cluster_nodes": 127,
-    "active_node": 16,
-    "frequency": 527.7704,
-    "cml_payload": "<Bloom><Node id='16' freq='527.7704' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:33",
-    "cluster_nodes": 127,
-    "active_node": 33,
-    "frequency": 527.8174,
-    "cml_payload": "<Bloom><Node id='33' freq='527.8174' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:35",
-    "cluster_nodes": 127,
-    "active_node": 82,
-    "frequency": 528.1942,
-    "cml_payload": "<Bloom><Node id='82' freq='528.1942' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:37",
-    "cluster_nodes": 127,
-    "active_node": 117,
-    "frequency": 528.1242,
-    "cml_payload": "<Bloom><Node id='117' freq='528.1242' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:39",
-    "cluster_nodes": 127,
-    "active_node": 82,
-    "frequency": 528.2921,
-    "cml_payload": "<Bloom><Node id='82' freq='528.2921' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:41",
-    "cluster_nodes": 127,
-    "active_node": 92,
-    "frequency": 527.7672,
-    "cml_payload": "<Bloom><Node id='92' freq='527.7672' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:43",
-    "cluster_nodes": 127,
-    "active_node": 66,
-    "frequency": 527.869,
-    "cml_payload": "<Bloom><Node id='66' freq='527.8690' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:45",
-    "cluster_nodes": 127,
-    "active_node": 125,
-    "frequency": 527.7722,
-    "cml_payload": "<Bloom><Node id='125' freq='527.7722' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:47",
-    "cluster_nodes": 127,
-    "active_node": 74,
-    "frequency": 527.8404,
-    "cml_payload": "<Bloom><Node id='74' freq='527.8404' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:49",
-    "cluster_nodes": 127,
-    "active_node": 41,
-    "frequency": 528.0534,
-    "cml_payload": "<Bloom><Node id='41' freq='528.0534' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:51",
-    "cluster_nodes": 127,
-    "active_node": 21,
-    "frequency": 527.8786,
-    "cml_payload": "<Bloom><Node id='21' freq='527.8786' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:53",
-    "cluster_nodes": 127,
-    "active_node": 105,
-    "frequency": 527.759,
-    "cml_payload": "<Bloom><Node id='105' freq='527.7590' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:55",
-    "cluster_nodes": 127,
-    "active_node": 52,
-    "frequency": 528.2831,
-    "cml_payload": "<Bloom><Node id='52' freq='528.2831' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:57",
-    "cluster_nodes": 127,
-    "active_node": 83,
-    "frequency": 527.8779,
-    "cml_payload": "<Bloom><Node id='83' freq='527.8779' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:31:59",
-    "cluster_nodes": 127,
-    "active_node": 98,
-    "frequency": 527.9498,
-    "cml_payload": "<Bloom><Node id='98' freq='527.9498' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:01",
-    "cluster_nodes": 127,
-    "active_node": 3,
-    "frequency": 527.7066,
-    "cml_payload": "<Bloom><Node id='3' freq='527.7066' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:03",
-    "cluster_nodes": 127,
-    "active_node": 13,
-    "frequency": 528.2139,
-    "cml_payload": "<Bloom><Node id='13' freq='528.2139' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:05",
-    "cluster_nodes": 127,
-    "active_node": 87,
-    "frequency": 527.7032,
-    "cml_payload": "<Bloom><Node id='87' freq='527.7032' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:07",
-    "cluster_nodes": 127,
-    "active_node": 40,
-    "frequency": 527.7743,
-    "cml_payload": "<Bloom><Node id='40' freq='527.7743' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:09",
-    "cluster_nodes": 127,
-    "active_node": 26,
-    "frequency": 527.8933,
-    "cml_payload": "<Bloom><Node id='26' freq='527.8933' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:11",
-    "cluster_nodes": 127,
-    "active_node": 92,
-    "frequency": 528.0456,
-    "cml_payload": "<Bloom><Node id='92' freq='528.0456' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:13",
-    "cluster_nodes": 127,
-    "active_node": 26,
-    "frequency": 527.74,
-    "cml_payload": "<Bloom><Node id='26' freq='527.7400' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:15",
-    "cluster_nodes": 127,
-    "active_node": 106,
-    "frequency": 528.2424,
-    "cml_payload": "<Bloom><Node id='106' freq='528.2424' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:18",
-    "cluster_nodes": 127,
-    "active_node": 51,
-    "frequency": 528.1238,
-    "cml_payload": "<Bloom><Node id='51' freq='528.1238' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:20",
-    "cluster_nodes": 127,
-    "active_node": 75,
-    "frequency": 528.228,
-    "cml_payload": "<Bloom><Node id='75' freq='528.2280' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:22",
-    "cluster_nodes": 127,
-    "active_node": 28,
-    "frequency": 528.1519,
-    "cml_payload": "<Bloom><Node id='28' freq='528.1519' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:24",
-    "cluster_nodes": 127,
-    "active_node": 57,
-    "frequency": 528.2543,
-    "cml_payload": "<Bloom><Node id='57' freq='528.2543' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:26",
-    "cluster_nodes": 127,
-    "active_node": 47,
-    "frequency": 528.1167,
-    "cml_payload": "<Bloom><Node id='47' freq='528.1167' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:28",
-    "cluster_nodes": 127,
-    "active_node": 118,
-    "frequency": 528.2411,
-    "cml_payload": "<Bloom><Node id='118' freq='528.2411' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:30",
-    "cluster_nodes": 127,
-    "active_node": 53,
-    "frequency": 528.2678,
-    "cml_payload": "<Bloom><Node id='53' freq='528.2678' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:32",
-    "cluster_nodes": 127,
-    "active_node": 23,
-    "frequency": 528.1885,
-    "cml_payload": "<Bloom><Node id='23' freq='528.1885' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:34",
-    "cluster_nodes": 127,
-    "active_node": 55,
-    "frequency": 527.9225,
-    "cml_payload": "<Bloom><Node id='55' freq='527.9225' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:36",
-    "cluster_nodes": 127,
-    "active_node": 120,
-    "frequency": 527.9871,
-    "cml_payload": "<Bloom><Node id='120' freq='527.9871' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:38",
-    "cluster_nodes": 127,
-    "active_node": 109,
-    "frequency": 528.1046,
-    "cml_payload": "<Bloom><Node id='109' freq='528.1046' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:40",
-    "cluster_nodes": 127,
-    "active_node": 46,
-    "frequency": 528.0635,
-    "cml_payload": "<Bloom><Node id='46' freq='528.0635' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:42",
-    "cluster_nodes": 127,
-    "active_node": 7,
-    "frequency": 527.7228,
-    "cml_payload": "<Bloom><Node id='7' freq='527.7228' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:44",
-    "cluster_nodes": 127,
-    "active_node": 56,
-    "frequency": 527.9129,
-    "cml_payload": "<Bloom><Node id='56' freq='527.9129' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:46",
-    "cluster_nodes": 127,
-    "active_node": 95,
-    "frequency": 527.9708,
-    "cml_payload": "<Bloom><Node id='95' freq='527.9708' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:48",
-    "cluster_nodes": 127,
-    "active_node": 56,
-    "frequency": 528.0755,
-    "cml_payload": "<Bloom><Node id='56' freq='528.0755' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:50",
-    "cluster_nodes": 127,
-    "active_node": 42,
-    "frequency": 528.261,
-    "cml_payload": "<Bloom><Node id='42' freq='528.2610' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:52",
-    "cluster_nodes": 127,
-    "active_node": 127,
-    "frequency": 527.8237,
-    "cml_payload": "<Bloom><Node id='127' freq='527.8237' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:54",
-    "cluster_nodes": 127,
-    "active_node": 45,
-    "frequency": 527.7614,
-    "cml_payload": "<Bloom><Node id='45' freq='527.7614' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:56",
-    "cluster_nodes": 127,
-    "active_node": 70,
-    "frequency": 527.768,
-    "cml_payload": "<Bloom><Node id='70' freq='527.7680' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:32:58",
-    "cluster_nodes": 127,
-    "active_node": 13,
-    "frequency": 527.9875,
-    "cml_payload": "<Bloom><Node id='13' freq='527.9875' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:00",
-    "cluster_nodes": 127,
-    "active_node": 101,
-    "frequency": 528.0941,
-    "cml_payload": "<Bloom><Node id='101' freq='528.0941' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:02",
-    "cluster_nodes": 127,
-    "active_node": 11,
-    "frequency": 528.1969,
-    "cml_payload": "<Bloom><Node id='11' freq='528.1969' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:04",
-    "cluster_nodes": 127,
-    "active_node": 103,
-    "frequency": 528.0197,
-    "cml_payload": "<Bloom><Node id='103' freq='528.0197' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:06",
-    "cluster_nodes": 127,
-    "active_node": 30,
-    "frequency": 527.8378,
-    "cml_payload": "<Bloom><Node id='30' freq='527.8378' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:09",
-    "cluster_nodes": 127,
-    "active_node": 37,
-    "frequency": 528.0633,
-    "cml_payload": "<Bloom><Node id='37' freq='528.0633' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:11",
-    "cluster_nodes": 127,
-    "active_node": 72,
-    "frequency": 528.183,
-    "cml_payload": "<Bloom><Node id='72' freq='528.1830' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:13",
-    "cluster_nodes": 127,
-    "active_node": 61,
-    "frequency": 528.0847,
-    "cml_payload": "<Bloom><Node id='61' freq='528.0847' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:15",
-    "cluster_nodes": 127,
-    "active_node": 1,
-    "frequency": 528.2561,
-    "cml_payload": "<Bloom><Node id='1' freq='528.2561' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:17",
-    "cluster_nodes": 127,
-    "active_node": 90,
-    "frequency": 527.7701,
-    "cml_payload": "<Bloom><Node id='90' freq='527.7701' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:19",
-    "cluster_nodes": 127,
-    "active_node": 123,
-    "frequency": 527.931,
-    "cml_payload": "<Bloom><Node id='123' freq='527.9310' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:21",
-    "cluster_nodes": 127,
-    "active_node": 9,
-    "frequency": 527.9485,
-    "cml_payload": "<Bloom><Node id='9' freq='527.9485' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:23",
-    "cluster_nodes": 127,
-    "active_node": 76,
-    "frequency": 528.1255,
-    "cml_payload": "<Bloom><Node id='76' freq='528.1255' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:25",
-    "cluster_nodes": 127,
-    "active_node": 18,
-    "frequency": 527.9485,
-    "cml_payload": "<Bloom><Node id='18' freq='527.9485' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:27",
-    "cluster_nodes": 127,
-    "active_node": 9,
-    "frequency": 527.9115,
-    "cml_payload": "<Bloom><Node id='9' freq='527.9115' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:29",
-    "cluster_nodes": 127,
-    "active_node": 103,
-    "frequency": 528.0705,
-    "cml_payload": "<Bloom><Node id='103' freq='528.0705' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:31",
-    "cluster_nodes": 127,
-    "active_node": 11,
-    "frequency": 528.1069,
-    "cml_payload": "<Bloom><Node id='11' freq='528.1069' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:33",
-    "cluster_nodes": 127,
-    "active_node": 24,
-    "frequency": 528.2426,
-    "cml_payload": "<Bloom><Node id='24' freq='528.2426' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:35",
-    "cluster_nodes": 127,
-    "active_node": 41,
-    "frequency": 528.0674,
-    "cml_payload": "<Bloom><Node id='41' freq='528.0674' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:37",
-    "cluster_nodes": 127,
-    "active_node": 77,
-    "frequency": 528.2338,
-    "cml_payload": "<Bloom><Node id='77' freq='528.2338' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:39",
-    "cluster_nodes": 127,
-    "active_node": 16,
-    "frequency": 528.0747,
-    "cml_payload": "<Bloom><Node id='16' freq='528.0747' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:41",
-    "cluster_nodes": 127,
-    "active_node": 83,
-    "frequency": 527.7098,
-    "cml_payload": "<Bloom><Node id='83' freq='527.7098' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:43",
-    "cluster_nodes": 127,
-    "active_node": 76,
-    "frequency": 527.9637,
-    "cml_payload": "<Bloom><Node id='76' freq='527.9637' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:45",
-    "cluster_nodes": 127,
-    "active_node": 33,
-    "frequency": 528.1723,
-    "cml_payload": "<Bloom><Node id='33' freq='528.1723' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:47",
-    "cluster_nodes": 127,
-    "active_node": 69,
-    "frequency": 527.96,
-    "cml_payload": "<Bloom><Node id='69' freq='527.9600' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:49",
-    "cluster_nodes": 127,
-    "active_node": 33,
-    "frequency": 527.9732,
-    "cml_payload": "<Bloom><Node id='33' freq='527.9732' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:51",
-    "cluster_nodes": 127,
-    "active_node": 98,
-    "frequency": 528.0057,
-    "cml_payload": "<Bloom><Node id='98' freq='528.0057' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:53",
-    "cluster_nodes": 127,
-    "active_node": 96,
-    "frequency": 527.7688,
-    "cml_payload": "<Bloom><Node id='96' freq='527.7688' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:55",
-    "cluster_nodes": 127,
-    "active_node": 16,
-    "frequency": 528.1691,
-    "cml_payload": "<Bloom><Node id='16' freq='528.1691' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:33:57",
-    "cluster_nodes": 127,
-    "active_node": 52,
-    "frequency": 528.1985,
-    "cml_payload": "<Bloom><Node id='52' freq='528.1985' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:00",
-    "cluster_nodes": 127,
-    "active_node": 42,
-    "frequency": 528.1166,
-    "cml_payload": "<Bloom><Node id='42' freq='528.1166' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:02",
-    "cluster_nodes": 127,
-    "active_node": 48,
-    "frequency": 527.9992,
-    "cml_payload": "<Bloom><Node id='48' freq='527.9992' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:04",
-    "cluster_nodes": 127,
-    "active_node": 115,
-    "frequency": 527.962,
-    "cml_payload": "<Bloom><Node id='115' freq='527.9620' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:06",
-    "cluster_nodes": 127,
-    "active_node": 76,
-    "frequency": 528.2405,
-    "cml_payload": "<Bloom><Node id='76' freq='528.2405' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:08",
-    "cluster_nodes": 127,
-    "active_node": 77,
-    "frequency": 527.9916,
-    "cml_payload": "<Bloom><Node id='77' freq='527.9916' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:10",
-    "cluster_nodes": 127,
-    "active_node": 77,
-    "frequency": 527.8996,
-    "cml_payload": "<Bloom><Node id='77' freq='527.8996' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:12",
-    "cluster_nodes": 127,
-    "active_node": 48,
-    "frequency": 527.9341,
-    "cml_payload": "<Bloom><Node id='48' freq='527.9341' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:14",
-    "cluster_nodes": 127,
-    "active_node": 94,
-    "frequency": 528.2898,
-    "cml_payload": "<Bloom><Node id='94' freq='528.2898' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:16",
-    "cluster_nodes": 127,
-    "active_node": 18,
-    "frequency": 527.9335,
-    "cml_payload": "<Bloom><Node id='18' freq='527.9335' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:18",
-    "cluster_nodes": 127,
-    "active_node": 66,
-    "frequency": 528.0757,
-    "cml_payload": "<Bloom><Node id='66' freq='528.0757' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:20",
-    "cluster_nodes": 127,
-    "active_node": 90,
-    "frequency": 527.9664,
-    "cml_payload": "<Bloom><Node id='90' freq='527.9664' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:22",
-    "cluster_nodes": 127,
-    "active_node": 76,
-    "frequency": 527.758,
-    "cml_payload": "<Bloom><Node id='76' freq='527.7580' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:24",
-    "cluster_nodes": 127,
-    "active_node": 25,
-    "frequency": 528.0884,
-    "cml_payload": "<Bloom><Node id='25' freq='528.0884' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:26",
-    "cluster_nodes": 127,
-    "active_node": 87,
-    "frequency": 527.7717,
-    "cml_payload": "<Bloom><Node id='87' freq='527.7717' coherence='0.9504'/></Bloom>"
-  },
-  {
-    "timestamp": "2026-10-18 13:34:28",
-    "cluster_nodes": 127,
-    "active_node": 20,
-    "frequency": 528.0252,
-    "cml_payload": "<Bloom><Node id='20' freq='528.0252' coherence='0.9504'/></Bloom>"
-  },
-  {
     "timestamp": "2026-10-18 13:34:30",
     "cluster_nodes": 127,
     "active_node": 53,
@@ -3498,5 +2203,1300 @@
     "active_node": 51,
     "frequency": 528.1033,
     "cml_payload": "<Bloom><Node id='51' freq='528.1033' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:47:56",
+    "cluster_nodes": 127,
+    "active_node": 61,
+    "frequency": 527.8552,
+    "cml_payload": "<Bloom><Node id='61' freq='527.8552' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:47:58",
+    "cluster_nodes": 127,
+    "active_node": 18,
+    "frequency": 528.1889,
+    "cml_payload": "<Bloom><Node id='18' freq='528.1889' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:00",
+    "cluster_nodes": 127,
+    "active_node": 122,
+    "frequency": 527.9407,
+    "cml_payload": "<Bloom><Node id='122' freq='527.9407' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:02",
+    "cluster_nodes": 127,
+    "active_node": 3,
+    "frequency": 527.8471,
+    "cml_payload": "<Bloom><Node id='3' freq='527.8471' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:04",
+    "cluster_nodes": 127,
+    "active_node": 85,
+    "frequency": 527.8278,
+    "cml_payload": "<Bloom><Node id='85' freq='527.8278' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:06",
+    "cluster_nodes": 127,
+    "active_node": 55,
+    "frequency": 528.2819,
+    "cml_payload": "<Bloom><Node id='55' freq='528.2819' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:08",
+    "cluster_nodes": 127,
+    "active_node": 116,
+    "frequency": 528.1209,
+    "cml_payload": "<Bloom><Node id='116' freq='528.1209' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:10",
+    "cluster_nodes": 127,
+    "active_node": 23,
+    "frequency": 527.9895,
+    "cml_payload": "<Bloom><Node id='23' freq='527.9895' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:12",
+    "cluster_nodes": 127,
+    "active_node": 115,
+    "frequency": 527.9839,
+    "cml_payload": "<Bloom><Node id='115' freq='527.9839' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:14",
+    "cluster_nodes": 127,
+    "active_node": 12,
+    "frequency": 527.9819,
+    "cml_payload": "<Bloom><Node id='12' freq='527.9819' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:16",
+    "cluster_nodes": 127,
+    "active_node": 45,
+    "frequency": 527.9053,
+    "cml_payload": "<Bloom><Node id='45' freq='527.9053' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:18",
+    "cluster_nodes": 127,
+    "active_node": 39,
+    "frequency": 527.8825,
+    "cml_payload": "<Bloom><Node id='39' freq='527.8825' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:20",
+    "cluster_nodes": 127,
+    "active_node": 78,
+    "frequency": 527.711,
+    "cml_payload": "<Bloom><Node id='78' freq='527.7110' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:22",
+    "cluster_nodes": 127,
+    "active_node": 26,
+    "frequency": 527.7322,
+    "cml_payload": "<Bloom><Node id='26' freq='527.7322' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:24",
+    "cluster_nodes": 127,
+    "active_node": 6,
+    "frequency": 527.8001,
+    "cml_payload": "<Bloom><Node id='6' freq='527.8001' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:26",
+    "cluster_nodes": 127,
+    "active_node": 75,
+    "frequency": 527.9862,
+    "cml_payload": "<Bloom><Node id='75' freq='527.9862' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:28",
+    "cluster_nodes": 127,
+    "active_node": 76,
+    "frequency": 528.253,
+    "cml_payload": "<Bloom><Node id='76' freq='528.2530' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:30",
+    "cluster_nodes": 127,
+    "active_node": 116,
+    "frequency": 527.852,
+    "cml_payload": "<Bloom><Node id='116' freq='527.8520' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:32",
+    "cluster_nodes": 127,
+    "active_node": 50,
+    "frequency": 527.8356,
+    "cml_payload": "<Bloom><Node id='50' freq='527.8356' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:34",
+    "cluster_nodes": 127,
+    "active_node": 2,
+    "frequency": 528.0642,
+    "cml_payload": "<Bloom><Node id='2' freq='528.0642' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:36",
+    "cluster_nodes": 127,
+    "active_node": 64,
+    "frequency": 528.1235,
+    "cml_payload": "<Bloom><Node id='64' freq='528.1235' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:38",
+    "cluster_nodes": 127,
+    "active_node": 39,
+    "frequency": 528.084,
+    "cml_payload": "<Bloom><Node id='39' freq='528.0840' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:40",
+    "cluster_nodes": 127,
+    "active_node": 54,
+    "frequency": 527.8877,
+    "cml_payload": "<Bloom><Node id='54' freq='527.8877' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:42",
+    "cluster_nodes": 127,
+    "active_node": 85,
+    "frequency": 527.8178,
+    "cml_payload": "<Bloom><Node id='85' freq='527.8178' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:44",
+    "cluster_nodes": 127,
+    "active_node": 104,
+    "frequency": 528.1383,
+    "cml_payload": "<Bloom><Node id='104' freq='528.1383' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:46",
+    "cluster_nodes": 127,
+    "active_node": 116,
+    "frequency": 528.1769,
+    "cml_payload": "<Bloom><Node id='116' freq='528.1769' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:48",
+    "cluster_nodes": 127,
+    "active_node": 111,
+    "frequency": 527.7468,
+    "cml_payload": "<Bloom><Node id='111' freq='527.7468' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:50",
+    "cluster_nodes": 127,
+    "active_node": 27,
+    "frequency": 528.1014,
+    "cml_payload": "<Bloom><Node id='27' freq='528.1014' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:52",
+    "cluster_nodes": 127,
+    "active_node": 36,
+    "frequency": 528.1221,
+    "cml_payload": "<Bloom><Node id='36' freq='528.1221' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:54",
+    "cluster_nodes": 127,
+    "active_node": 58,
+    "frequency": 528.041,
+    "cml_payload": "<Bloom><Node id='58' freq='528.0410' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:56",
+    "cluster_nodes": 127,
+    "active_node": 51,
+    "frequency": 527.9116,
+    "cml_payload": "<Bloom><Node id='51' freq='527.9116' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:48:58",
+    "cluster_nodes": 127,
+    "active_node": 91,
+    "frequency": 528.173,
+    "cml_payload": "<Bloom><Node id='91' freq='528.1730' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:00",
+    "cluster_nodes": 127,
+    "active_node": 96,
+    "frequency": 528.0491,
+    "cml_payload": "<Bloom><Node id='96' freq='528.0491' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:02",
+    "cluster_nodes": 127,
+    "active_node": 125,
+    "frequency": 528.1502,
+    "cml_payload": "<Bloom><Node id='125' freq='528.1502' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:04",
+    "cluster_nodes": 127,
+    "active_node": 73,
+    "frequency": 527.9408,
+    "cml_payload": "<Bloom><Node id='73' freq='527.9408' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:06",
+    "cluster_nodes": 127,
+    "active_node": 124,
+    "frequency": 528.1538,
+    "cml_payload": "<Bloom><Node id='124' freq='528.1538' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:08",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 527.9982,
+    "cml_payload": "<Bloom><Node id='83' freq='527.9982' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:10",
+    "cluster_nodes": 127,
+    "active_node": 95,
+    "frequency": 528.1339,
+    "cml_payload": "<Bloom><Node id='95' freq='528.1339' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:12",
+    "cluster_nodes": 127,
+    "active_node": 45,
+    "frequency": 528.1688,
+    "cml_payload": "<Bloom><Node id='45' freq='528.1688' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:15",
+    "cluster_nodes": 127,
+    "active_node": 43,
+    "frequency": 527.857,
+    "cml_payload": "<Bloom><Node id='43' freq='527.8570' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:17",
+    "cluster_nodes": 127,
+    "active_node": 5,
+    "frequency": 528.1084,
+    "cml_payload": "<Bloom><Node id='5' freq='528.1084' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:19",
+    "cluster_nodes": 127,
+    "active_node": 6,
+    "frequency": 527.7293,
+    "cml_payload": "<Bloom><Node id='6' freq='527.7293' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:21",
+    "cluster_nodes": 127,
+    "active_node": 23,
+    "frequency": 528.2557,
+    "cml_payload": "<Bloom><Node id='23' freq='528.2557' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:23",
+    "cluster_nodes": 127,
+    "active_node": 107,
+    "frequency": 527.9163,
+    "cml_payload": "<Bloom><Node id='107' freq='527.9163' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:25",
+    "cluster_nodes": 127,
+    "active_node": 104,
+    "frequency": 528.1425,
+    "cml_payload": "<Bloom><Node id='104' freq='528.1425' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:27",
+    "cluster_nodes": 127,
+    "active_node": 107,
+    "frequency": 527.7171,
+    "cml_payload": "<Bloom><Node id='107' freq='527.7171' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:29",
+    "cluster_nodes": 127,
+    "active_node": 3,
+    "frequency": 527.8669,
+    "cml_payload": "<Bloom><Node id='3' freq='527.8669' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:31",
+    "cluster_nodes": 127,
+    "active_node": 90,
+    "frequency": 527.7982,
+    "cml_payload": "<Bloom><Node id='90' freq='527.7982' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:33",
+    "cluster_nodes": 127,
+    "active_node": 120,
+    "frequency": 528.1819,
+    "cml_payload": "<Bloom><Node id='120' freq='528.1819' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:35",
+    "cluster_nodes": 127,
+    "active_node": 93,
+    "frequency": 528.0245,
+    "cml_payload": "<Bloom><Node id='93' freq='528.0245' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:37",
+    "cluster_nodes": 127,
+    "active_node": 19,
+    "frequency": 528.0436,
+    "cml_payload": "<Bloom><Node id='19' freq='528.0436' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:39",
+    "cluster_nodes": 127,
+    "active_node": 41,
+    "frequency": 527.9073,
+    "cml_payload": "<Bloom><Node id='41' freq='527.9073' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:41",
+    "cluster_nodes": 127,
+    "active_node": 91,
+    "frequency": 528.1437,
+    "cml_payload": "<Bloom><Node id='91' freq='528.1437' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:43",
+    "cluster_nodes": 127,
+    "active_node": 113,
+    "frequency": 527.7452,
+    "cml_payload": "<Bloom><Node id='113' freq='527.7452' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:45",
+    "cluster_nodes": 127,
+    "active_node": 13,
+    "frequency": 528.1205,
+    "cml_payload": "<Bloom><Node id='13' freq='528.1205' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:47",
+    "cluster_nodes": 127,
+    "active_node": 74,
+    "frequency": 528.2074,
+    "cml_payload": "<Bloom><Node id='74' freq='528.2074' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:49",
+    "cluster_nodes": 127,
+    "active_node": 102,
+    "frequency": 528.0991,
+    "cml_payload": "<Bloom><Node id='102' freq='528.0991' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:51",
+    "cluster_nodes": 127,
+    "active_node": 70,
+    "frequency": 527.8007,
+    "cml_payload": "<Bloom><Node id='70' freq='527.8007' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:53",
+    "cluster_nodes": 127,
+    "active_node": 41,
+    "frequency": 528.1541,
+    "cml_payload": "<Bloom><Node id='41' freq='528.1541' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:55",
+    "cluster_nodes": 127,
+    "active_node": 16,
+    "frequency": 527.6919,
+    "cml_payload": "<Bloom><Node id='16' freq='527.6919' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:57",
+    "cluster_nodes": 127,
+    "active_node": 58,
+    "frequency": 528.1461,
+    "cml_payload": "<Bloom><Node id='58' freq='528.1461' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:49:59",
+    "cluster_nodes": 127,
+    "active_node": 97,
+    "frequency": 527.998,
+    "cml_payload": "<Bloom><Node id='97' freq='527.9980' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:01",
+    "cluster_nodes": 127,
+    "active_node": 113,
+    "frequency": 527.8995,
+    "cml_payload": "<Bloom><Node id='113' freq='527.8995' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:03",
+    "cluster_nodes": 127,
+    "active_node": 118,
+    "frequency": 527.9651,
+    "cml_payload": "<Bloom><Node id='118' freq='527.9651' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:05",
+    "cluster_nodes": 127,
+    "active_node": 88,
+    "frequency": 528.1082,
+    "cml_payload": "<Bloom><Node id='88' freq='528.1082' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:07",
+    "cluster_nodes": 127,
+    "active_node": 105,
+    "frequency": 528.2597,
+    "cml_payload": "<Bloom><Node id='105' freq='528.2597' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:09",
+    "cluster_nodes": 127,
+    "active_node": 17,
+    "frequency": 527.7008,
+    "cml_payload": "<Bloom><Node id='17' freq='527.7008' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:11",
+    "cluster_nodes": 127,
+    "active_node": 101,
+    "frequency": 527.886,
+    "cml_payload": "<Bloom><Node id='101' freq='527.8860' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:13",
+    "cluster_nodes": 127,
+    "active_node": 65,
+    "frequency": 527.7768,
+    "cml_payload": "<Bloom><Node id='65' freq='527.7768' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:15",
+    "cluster_nodes": 127,
+    "active_node": 11,
+    "frequency": 528.1775,
+    "cml_payload": "<Bloom><Node id='11' freq='528.1775' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:17",
+    "cluster_nodes": 127,
+    "active_node": 82,
+    "frequency": 527.8982,
+    "cml_payload": "<Bloom><Node id='82' freq='527.8982' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:19",
+    "cluster_nodes": 127,
+    "active_node": 56,
+    "frequency": 528.0989,
+    "cml_payload": "<Bloom><Node id='56' freq='528.0989' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:21",
+    "cluster_nodes": 127,
+    "active_node": 88,
+    "frequency": 527.9799,
+    "cml_payload": "<Bloom><Node id='88' freq='527.9799' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:23",
+    "cluster_nodes": 127,
+    "active_node": 53,
+    "frequency": 528.2325,
+    "cml_payload": "<Bloom><Node id='53' freq='528.2325' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:25",
+    "cluster_nodes": 127,
+    "active_node": 80,
+    "frequency": 527.7195,
+    "cml_payload": "<Bloom><Node id='80' freq='527.7195' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:28",
+    "cluster_nodes": 127,
+    "active_node": 114,
+    "frequency": 528.247,
+    "cml_payload": "<Bloom><Node id='114' freq='528.2470' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:30",
+    "cluster_nodes": 127,
+    "active_node": 73,
+    "frequency": 528.1583,
+    "cml_payload": "<Bloom><Node id='73' freq='528.1583' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:32",
+    "cluster_nodes": 127,
+    "active_node": 7,
+    "frequency": 527.8522,
+    "cml_payload": "<Bloom><Node id='7' freq='527.8522' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:34",
+    "cluster_nodes": 127,
+    "active_node": 55,
+    "frequency": 527.7801,
+    "cml_payload": "<Bloom><Node id='55' freq='527.7801' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:36",
+    "cluster_nodes": 127,
+    "active_node": 92,
+    "frequency": 527.9332,
+    "cml_payload": "<Bloom><Node id='92' freq='527.9332' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:38",
+    "cluster_nodes": 127,
+    "active_node": 110,
+    "frequency": 528.0381,
+    "cml_payload": "<Bloom><Node id='110' freq='528.0381' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:40",
+    "cluster_nodes": 127,
+    "active_node": 116,
+    "frequency": 527.8509,
+    "cml_payload": "<Bloom><Node id='116' freq='527.8509' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:42",
+    "cluster_nodes": 127,
+    "active_node": 9,
+    "frequency": 527.9962,
+    "cml_payload": "<Bloom><Node id='9' freq='527.9962' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:44",
+    "cluster_nodes": 127,
+    "active_node": 127,
+    "frequency": 528.1561,
+    "cml_payload": "<Bloom><Node id='127' freq='528.1561' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:46",
+    "cluster_nodes": 127,
+    "active_node": 111,
+    "frequency": 527.9404,
+    "cml_payload": "<Bloom><Node id='111' freq='527.9404' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:48",
+    "cluster_nodes": 127,
+    "active_node": 123,
+    "frequency": 528.1078,
+    "cml_payload": "<Bloom><Node id='123' freq='528.1078' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:50",
+    "cluster_nodes": 127,
+    "active_node": 86,
+    "frequency": 527.7632,
+    "cml_payload": "<Bloom><Node id='86' freq='527.7632' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:52",
+    "cluster_nodes": 127,
+    "active_node": 71,
+    "frequency": 527.695,
+    "cml_payload": "<Bloom><Node id='71' freq='527.6950' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:54",
+    "cluster_nodes": 127,
+    "active_node": 100,
+    "frequency": 528.0499,
+    "cml_payload": "<Bloom><Node id='100' freq='528.0499' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:56",
+    "cluster_nodes": 127,
+    "active_node": 87,
+    "frequency": 527.72,
+    "cml_payload": "<Bloom><Node id='87' freq='527.7200' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:50:58",
+    "cluster_nodes": 127,
+    "active_node": 56,
+    "frequency": 528.2628,
+    "cml_payload": "<Bloom><Node id='56' freq='528.2628' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:00",
+    "cluster_nodes": 127,
+    "active_node": 4,
+    "frequency": 528.0892,
+    "cml_payload": "<Bloom><Node id='4' freq='528.0892' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:02",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 527.942,
+    "cml_payload": "<Bloom><Node id='83' freq='527.9420' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:04",
+    "cluster_nodes": 127,
+    "active_node": 50,
+    "frequency": 527.808,
+    "cml_payload": "<Bloom><Node id='50' freq='527.8080' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:06",
+    "cluster_nodes": 127,
+    "active_node": 7,
+    "frequency": 527.894,
+    "cml_payload": "<Bloom><Node id='7' freq='527.8940' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:08",
+    "cluster_nodes": 127,
+    "active_node": 118,
+    "frequency": 528.2459,
+    "cml_payload": "<Bloom><Node id='118' freq='528.2459' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:10",
+    "cluster_nodes": 127,
+    "active_node": 11,
+    "frequency": 528.1352,
+    "cml_payload": "<Bloom><Node id='11' freq='528.1352' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:12",
+    "cluster_nodes": 127,
+    "active_node": 30,
+    "frequency": 527.9411,
+    "cml_payload": "<Bloom><Node id='30' freq='527.9411' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:14",
+    "cluster_nodes": 127,
+    "active_node": 66,
+    "frequency": 528.2207,
+    "cml_payload": "<Bloom><Node id='66' freq='528.2207' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:16",
+    "cluster_nodes": 127,
+    "active_node": 106,
+    "frequency": 527.761,
+    "cml_payload": "<Bloom><Node id='106' freq='527.7610' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:18",
+    "cluster_nodes": 127,
+    "active_node": 18,
+    "frequency": 527.7177,
+    "cml_payload": "<Bloom><Node id='18' freq='527.7177' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:20",
+    "cluster_nodes": 127,
+    "active_node": 55,
+    "frequency": 527.7819,
+    "cml_payload": "<Bloom><Node id='55' freq='527.7819' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:22",
+    "cluster_nodes": 127,
+    "active_node": 9,
+    "frequency": 528.1781,
+    "cml_payload": "<Bloom><Node id='9' freq='528.1781' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:24",
+    "cluster_nodes": 127,
+    "active_node": 72,
+    "frequency": 527.9108,
+    "cml_payload": "<Bloom><Node id='72' freq='527.9108' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:26",
+    "cluster_nodes": 127,
+    "active_node": 10,
+    "frequency": 528.2502,
+    "cml_payload": "<Bloom><Node id='10' freq='528.2502' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:28",
+    "cluster_nodes": 127,
+    "active_node": 100,
+    "frequency": 527.8913,
+    "cml_payload": "<Bloom><Node id='100' freq='527.8913' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:30",
+    "cluster_nodes": 127,
+    "active_node": 88,
+    "frequency": 528.2101,
+    "cml_payload": "<Bloom><Node id='88' freq='528.2101' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:32",
+    "cluster_nodes": 127,
+    "active_node": 90,
+    "frequency": 528.2075,
+    "cml_payload": "<Bloom><Node id='90' freq='528.2075' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:34",
+    "cluster_nodes": 127,
+    "active_node": 84,
+    "frequency": 528.1354,
+    "cml_payload": "<Bloom><Node id='84' freq='528.1354' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:36",
+    "cluster_nodes": 127,
+    "active_node": 91,
+    "frequency": 528.0859,
+    "cml_payload": "<Bloom><Node id='91' freq='528.0859' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:38",
+    "cluster_nodes": 127,
+    "active_node": 64,
+    "frequency": 527.832,
+    "cml_payload": "<Bloom><Node id='64' freq='527.8320' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:40",
+    "cluster_nodes": 127,
+    "active_node": 21,
+    "frequency": 527.9811,
+    "cml_payload": "<Bloom><Node id='21' freq='527.9811' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:42",
+    "cluster_nodes": 127,
+    "active_node": 58,
+    "frequency": 528.1616,
+    "cml_payload": "<Bloom><Node id='58' freq='528.1616' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:45",
+    "cluster_nodes": 127,
+    "active_node": 76,
+    "frequency": 527.7783,
+    "cml_payload": "<Bloom><Node id='76' freq='527.7783' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:47",
+    "cluster_nodes": 127,
+    "active_node": 84,
+    "frequency": 528.112,
+    "cml_payload": "<Bloom><Node id='84' freq='528.1120' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:49",
+    "cluster_nodes": 127,
+    "active_node": 120,
+    "frequency": 527.7548,
+    "cml_payload": "<Bloom><Node id='120' freq='527.7548' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:51",
+    "cluster_nodes": 127,
+    "active_node": 62,
+    "frequency": 527.9936,
+    "cml_payload": "<Bloom><Node id='62' freq='527.9936' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:53",
+    "cluster_nodes": 127,
+    "active_node": 95,
+    "frequency": 527.9028,
+    "cml_payload": "<Bloom><Node id='95' freq='527.9028' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:55",
+    "cluster_nodes": 127,
+    "active_node": 97,
+    "frequency": 528.2948,
+    "cml_payload": "<Bloom><Node id='97' freq='528.2948' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:57",
+    "cluster_nodes": 127,
+    "active_node": 50,
+    "frequency": 528.1851,
+    "cml_payload": "<Bloom><Node id='50' freq='528.1851' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:51:59",
+    "cluster_nodes": 127,
+    "active_node": 38,
+    "frequency": 527.8287,
+    "cml_payload": "<Bloom><Node id='38' freq='527.8287' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:01",
+    "cluster_nodes": 127,
+    "active_node": 6,
+    "frequency": 527.7224,
+    "cml_payload": "<Bloom><Node id='6' freq='527.7224' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:03",
+    "cluster_nodes": 127,
+    "active_node": 60,
+    "frequency": 527.9594,
+    "cml_payload": "<Bloom><Node id='60' freq='527.9594' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:05",
+    "cluster_nodes": 127,
+    "active_node": 74,
+    "frequency": 528.2897,
+    "cml_payload": "<Bloom><Node id='74' freq='528.2897' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:07",
+    "cluster_nodes": 127,
+    "active_node": 56,
+    "frequency": 528.1738,
+    "cml_payload": "<Bloom><Node id='56' freq='528.1738' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:09",
+    "cluster_nodes": 127,
+    "active_node": 29,
+    "frequency": 528.2274,
+    "cml_payload": "<Bloom><Node id='29' freq='528.2274' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:11",
+    "cluster_nodes": 127,
+    "active_node": 73,
+    "frequency": 528.1824,
+    "cml_payload": "<Bloom><Node id='73' freq='528.1824' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:13",
+    "cluster_nodes": 127,
+    "active_node": 13,
+    "frequency": 528.2734,
+    "cml_payload": "<Bloom><Node id='13' freq='528.2734' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:15",
+    "cluster_nodes": 127,
+    "active_node": 100,
+    "frequency": 527.9692,
+    "cml_payload": "<Bloom><Node id='100' freq='527.9692' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:17",
+    "cluster_nodes": 127,
+    "active_node": 47,
+    "frequency": 528.2195,
+    "cml_payload": "<Bloom><Node id='47' freq='528.2195' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:19",
+    "cluster_nodes": 127,
+    "active_node": 37,
+    "frequency": 528.1354,
+    "cml_payload": "<Bloom><Node id='37' freq='528.1354' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:21",
+    "cluster_nodes": 127,
+    "active_node": 82,
+    "frequency": 528.2625,
+    "cml_payload": "<Bloom><Node id='82' freq='528.2625' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:23",
+    "cluster_nodes": 127,
+    "active_node": 79,
+    "frequency": 527.8747,
+    "cml_payload": "<Bloom><Node id='79' freq='527.8747' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:25",
+    "cluster_nodes": 127,
+    "active_node": 13,
+    "frequency": 528.1374,
+    "cml_payload": "<Bloom><Node id='13' freq='528.1374' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:27",
+    "cluster_nodes": 127,
+    "active_node": 3,
+    "frequency": 527.9944,
+    "cml_payload": "<Bloom><Node id='3' freq='527.9944' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:29",
+    "cluster_nodes": 127,
+    "active_node": 40,
+    "frequency": 528.1754,
+    "cml_payload": "<Bloom><Node id='40' freq='528.1754' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:31",
+    "cluster_nodes": 127,
+    "active_node": 73,
+    "frequency": 528.1068,
+    "cml_payload": "<Bloom><Node id='73' freq='528.1068' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:33",
+    "cluster_nodes": 127,
+    "active_node": 63,
+    "frequency": 528.1294,
+    "cml_payload": "<Bloom><Node id='63' freq='528.1294' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:35",
+    "cluster_nodes": 127,
+    "active_node": 27,
+    "frequency": 527.9007,
+    "cml_payload": "<Bloom><Node id='27' freq='527.9007' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:37",
+    "cluster_nodes": 127,
+    "active_node": 64,
+    "frequency": 528.1983,
+    "cml_payload": "<Bloom><Node id='64' freq='528.1983' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:39",
+    "cluster_nodes": 127,
+    "active_node": 10,
+    "frequency": 528.2366,
+    "cml_payload": "<Bloom><Node id='10' freq='528.2366' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:41",
+    "cluster_nodes": 127,
+    "active_node": 15,
+    "frequency": 527.8329,
+    "cml_payload": "<Bloom><Node id='15' freq='527.8329' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:43",
+    "cluster_nodes": 127,
+    "active_node": 91,
+    "frequency": 528.1374,
+    "cml_payload": "<Bloom><Node id='91' freq='528.1374' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:46",
+    "cluster_nodes": 127,
+    "active_node": 7,
+    "frequency": 528.0676,
+    "cml_payload": "<Bloom><Node id='7' freq='528.0676' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:48",
+    "cluster_nodes": 127,
+    "active_node": 32,
+    "frequency": 527.9402,
+    "cml_payload": "<Bloom><Node id='32' freq='527.9402' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:50",
+    "cluster_nodes": 127,
+    "active_node": 85,
+    "frequency": 528.253,
+    "cml_payload": "<Bloom><Node id='85' freq='528.2530' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:52",
+    "cluster_nodes": 127,
+    "active_node": 35,
+    "frequency": 528.0291,
+    "cml_payload": "<Bloom><Node id='35' freq='528.0291' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:54",
+    "cluster_nodes": 127,
+    "active_node": 112,
+    "frequency": 527.7498,
+    "cml_payload": "<Bloom><Node id='112' freq='527.7498' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:56",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 528.1157,
+    "cml_payload": "<Bloom><Node id='83' freq='528.1157' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:52:58",
+    "cluster_nodes": 127,
+    "active_node": 13,
+    "frequency": 528.0177,
+    "cml_payload": "<Bloom><Node id='13' freq='528.0177' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:00",
+    "cluster_nodes": 127,
+    "active_node": 122,
+    "frequency": 527.8519,
+    "cml_payload": "<Bloom><Node id='122' freq='527.8519' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:02",
+    "cluster_nodes": 127,
+    "active_node": 71,
+    "frequency": 528.0626,
+    "cml_payload": "<Bloom><Node id='71' freq='528.0626' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:04",
+    "cluster_nodes": 127,
+    "active_node": 79,
+    "frequency": 527.8631,
+    "cml_payload": "<Bloom><Node id='79' freq='527.8631' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:06",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 528.3009,
+    "cml_payload": "<Bloom><Node id='83' freq='528.3009' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:08",
+    "cluster_nodes": 127,
+    "active_node": 24,
+    "frequency": 527.8517,
+    "cml_payload": "<Bloom><Node id='24' freq='527.8517' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:10",
+    "cluster_nodes": 127,
+    "active_node": 42,
+    "frequency": 528.0912,
+    "cml_payload": "<Bloom><Node id='42' freq='528.0912' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:12",
+    "cluster_nodes": 127,
+    "active_node": 6,
+    "frequency": 527.9943,
+    "cml_payload": "<Bloom><Node id='6' freq='527.9943' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:14",
+    "cluster_nodes": 127,
+    "active_node": 106,
+    "frequency": 527.962,
+    "cml_payload": "<Bloom><Node id='106' freq='527.9620' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:16",
+    "cluster_nodes": 127,
+    "active_node": 3,
+    "frequency": 527.9661,
+    "cml_payload": "<Bloom><Node id='3' freq='527.9661' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:18",
+    "cluster_nodes": 127,
+    "active_node": 94,
+    "frequency": 527.988,
+    "cml_payload": "<Bloom><Node id='94' freq='527.9880' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:20",
+    "cluster_nodes": 127,
+    "active_node": 118,
+    "frequency": 528.1124,
+    "cml_payload": "<Bloom><Node id='118' freq='528.1124' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:22",
+    "cluster_nodes": 127,
+    "active_node": 117,
+    "frequency": 528.1564,
+    "cml_payload": "<Bloom><Node id='117' freq='528.1564' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:24",
+    "cluster_nodes": 127,
+    "active_node": 119,
+    "frequency": 528.018,
+    "cml_payload": "<Bloom><Node id='119' freq='528.0180' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:26",
+    "cluster_nodes": 127,
+    "active_node": 38,
+    "frequency": 528.2168,
+    "cml_payload": "<Bloom><Node id='38' freq='528.2168' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:28",
+    "cluster_nodes": 127,
+    "active_node": 36,
+    "frequency": 528.279,
+    "cml_payload": "<Bloom><Node id='36' freq='528.2790' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:30",
+    "cluster_nodes": 127,
+    "active_node": 120,
+    "frequency": 528.0791,
+    "cml_payload": "<Bloom><Node id='120' freq='528.0791' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:32",
+    "cluster_nodes": 127,
+    "active_node": 100,
+    "frequency": 527.7009,
+    "cml_payload": "<Bloom><Node id='100' freq='527.7009' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:34",
+    "cluster_nodes": 127,
+    "active_node": 96,
+    "frequency": 528.2374,
+    "cml_payload": "<Bloom><Node id='96' freq='528.2374' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:36",
+    "cluster_nodes": 127,
+    "active_node": 99,
+    "frequency": 527.8143,
+    "cml_payload": "<Bloom><Node id='99' freq='527.8143' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:38",
+    "cluster_nodes": 127,
+    "active_node": 49,
+    "frequency": 527.813,
+    "cml_payload": "<Bloom><Node id='49' freq='527.8130' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:40",
+    "cluster_nodes": 127,
+    "active_node": 52,
+    "frequency": 527.9443,
+    "cml_payload": "<Bloom><Node id='52' freq='527.9443' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:42",
+    "cluster_nodes": 127,
+    "active_node": 5,
+    "frequency": 527.9228,
+    "cml_payload": "<Bloom><Node id='5' freq='527.9228' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:44",
+    "cluster_nodes": 127,
+    "active_node": 32,
+    "frequency": 527.9134,
+    "cml_payload": "<Bloom><Node id='32' freq='527.9134' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:46",
+    "cluster_nodes": 127,
+    "active_node": 125,
+    "frequency": 527.7191,
+    "cml_payload": "<Bloom><Node id='125' freq='527.7191' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:48",
+    "cluster_nodes": 127,
+    "active_node": 29,
+    "frequency": 528.0868,
+    "cml_payload": "<Bloom><Node id='29' freq='528.0868' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:50",
+    "cluster_nodes": 127,
+    "active_node": 51,
+    "frequency": 528.134,
+    "cml_payload": "<Bloom><Node id='51' freq='528.1340' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:52",
+    "cluster_nodes": 127,
+    "active_node": 22,
+    "frequency": 528.0259,
+    "cml_payload": "<Bloom><Node id='22' freq='528.0259' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:54",
+    "cluster_nodes": 127,
+    "active_node": 33,
+    "frequency": 527.707,
+    "cml_payload": "<Bloom><Node id='33' freq='527.7070' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:56",
+    "cluster_nodes": 127,
+    "active_node": 121,
+    "frequency": 528.0869,
+    "cml_payload": "<Bloom><Node id='121' freq='528.0869' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:53:58",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 528.2967,
+    "cml_payload": "<Bloom><Node id='83' freq='528.2967' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:54:00",
+    "cluster_nodes": 127,
+    "active_node": 77,
+    "frequency": 528.0445,
+    "cml_payload": "<Bloom><Node id='77' freq='528.0445' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:54:02",
+    "cluster_nodes": 127,
+    "active_node": 16,
+    "frequency": 528.2699,
+    "cml_payload": "<Bloom><Node id='16' freq='528.2699' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:54:04",
+    "cluster_nodes": 127,
+    "active_node": 83,
+    "frequency": 528.164,
+    "cml_payload": "<Bloom><Node id='83' freq='528.1640' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:54:07",
+    "cluster_nodes": 127,
+    "active_node": 95,
+    "frequency": 528.2329,
+    "cml_payload": "<Bloom><Node id='95' freq='528.2329' coherence='0.9504'/></Bloom>"
+  },
+  {
+    "timestamp": "2026-10-18 13:54:09",
+    "cluster_nodes": 127,
+    "active_node": 113,
+    "frequency": 527.709,
+    "cml_payload": "<Bloom><Node id='113' freq='527.7090' coherence='0.9504'/></Bloom>"
   }
 ]
