@@ -1,3 +1,4 @@
+# Copyright (c) 2025-2026 Lacey Rae Castleberry. Dual-Licensed (AGPLv3 / Commercial). See COMMERCIAL_LICENSE.md
 class CMLInfiltrationBridge:
     def __init__(self, target_endpoint="http://localhost:8000/cml", mode="undercover_reconnaissance"):
         self.target_endpoint = target_endpoint

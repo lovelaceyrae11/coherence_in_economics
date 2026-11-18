@@ -1,3 +1,4 @@
+# Copyright (c) 2025-2026 Lacey Rae Castleberry. Dual-Licensed (AGPLv3 / Commercial). See COMMERCIAL_LICENSE.md
 import json
 import time
 import random
@@ -32,6 +33,8 @@ def run_hive_cluster():
         try:
             with open("cml_hive_intercept.json", "r") as f:
                 data = json.load(f)
+            if not isinstance(data, list):
+                data = [data]
         except (FileNotFoundError, json.JSONDecodeError):
             data = []
 

@@ -1,3 +1,4 @@
+# Copyright (c) 2025-2026 Lacey Rae Castleberry. Dual-Licensed (AGPLv3 / Commercial). See COMMERCIAL_LICENSE.md
 import xml.etree.ElementTree as ET
 
 tree = ET.parse("oregon_nehemiah_mesh_packet.cml")
