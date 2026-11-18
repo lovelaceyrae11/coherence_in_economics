@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # 🌟 Castleberry Bloom: The Sovereign Lattice
 
 > *Transmuting extractive control into relational connection through harmonic architecture.*
@@ -8,6 +9,11 @@
 [![Research](https://img.shields.io/badge/status-active%20research-orange?style=flat-square)]()
 
 ---
+=======
+0
+## 🛡️ Enterprise Compliance, Certified Audits & Commercial Licensing
+Closed-source commercial deployments require an active **Castleberry Bloom Commercial Exemption License** (Dual-Licensed under AGPLv3 / Commercial).
+>>>>>>> Stashed changes
 
 ## 📖 Table of Contents
 
